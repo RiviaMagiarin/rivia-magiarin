@@ -1,0 +1,63 @@
+// Variables globales
+$font-main: 'Georgia', serif;
+$font-title: 'Palatino Linotype', serif;
+
+$color-dark: #1a1a2e;
+$color-light: #f5f0e8;
+$color-accent: #c9a96e;
+
+// Cozy Witch
+$cozy-green: #4a5240;
+$cozy-purple: #7b5ea7;
+$cozy-cream: #f5f0e8;
+$cozy-orange: #e8834a;
+
+// Canary Feast
+$canary-yellow: #f5c842;
+$canary-black: #1a1a1a;
+$canary-red: #8b1a1a;
+$canary-cream: #f5f0e8;
+
+// Octopus
+$octopus-blue: #1a1a6e;
+$octopus-magenta: #c0186e;
+$octopus-algae: #2d6a4f;
+$octopus-sand: #f2e8d5;
+$octopus-turquoise: #48a999;
+
+.noscript-warning {
+    background-color: #f5c842;
+    color: #1a1a1a;
+    text-align: center;
+    padding: 0.5rem;
+    font-family: $font-main;
+    font-size: 0.9rem;
+}
+
+// Reset básico
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: $font-main;
+    background-color: $color-dark;
+    color: $color-light;
+    line-height: 1.6;
+}
+
+h1, h2, h3 {
+    font-family: $font-title;
+    color: $color-accent;
+}
+
+a {
+    color: $color-accent;
+    text-decoration: none;
+    
+    &:hover {
+        text-decoration: underline;
+    }
+}

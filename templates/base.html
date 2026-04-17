@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="{{ lang }}">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{% block title %}Rivia Magiarin{% endblock %}</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+</head>
+<body>
+
+    <nav>
+        <a class="nav-brand" href="/">Rivia Magiarin</a>
+
+        <button class="nav-hamburger" aria-label="Abrir menú">
+            <span></span>
+            <span></span>
+            <span></span>
+        </button>
+
+        <ul class="nav-collections">
+            <li><a href="/cozy-witch">The Cozy Witch</a></li>
+            <li><a href="/canary-feast">Canary Feast</a></li>
+            <li><a href="/octopus">Octopus</a></li>
+        </ul>
+
+        <ul class="nav-lang">
+            <li><a href="?lang=en" {% if lang == 'en' %}class="active"{% endif %}>EN</a></li>
+            <li><a href="?lang=es" {% if lang == 'es' %}class="active"{% endif %}>ES</a></li>
+            <li><a href="?lang=gl" {% if lang == 'gl' %}class="active"{% endif %}>GL</a></li>
+        </ul>
+    </nav>
+
+    <noscript>
+        <p class="noscript-warning">Esta web funciona mejor con JavaScript activado.</p>
+    </noscript>
+
+    <main>
+        {% block content %}{% endblock %}
+    </main>
+
+    <footer>
+        <p>© 2025 Rivia Magiarin</p>
+    </footer>
+
+    <script src="{{ url_for('static', filename='js/main.js') }}"></script>
+</body>
+</html>

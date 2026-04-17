@@ -1,0 +1,26 @@
+# Python
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+.Python
+
+# Entorno virtual
+venv/
+.venv/
+env/
+
+# Variables de entorno
+.env
+.env.*
+
+# SASS compilado
+static/css/
+
+# Flask
+instance/
+*.db
+
+# IDEs
+.vscode/
+.idea/
