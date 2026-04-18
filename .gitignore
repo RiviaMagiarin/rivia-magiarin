@@ -14,9 +14,6 @@ env/
 .env
 .env.*
 
-# SASS compilado
-static/css/
-
 # Flask
 instance/
 *.db
