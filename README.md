@@ -1,4 +1,4 @@
-# Rivia Magiarin
+# Rivia Magiarín
 
 EN:
 NFT art and storytelling website built with Flask and SASS.

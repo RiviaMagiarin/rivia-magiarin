@@ -3,13 +3,15 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>{% block title %}Rivia Magiarin{% endblock %}</title>
+    <title>{% block title %}Rivia Magiarín{% endblock %}</title>
+    <link rel="icon" type="image/png" href="{{ url_for('static', filename='images/logof.png') }}">
     <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+    {% block head %}{% endblock %}
 </head>
 <body>
 
     <nav>
-        <a class="nav-brand" href="/">Rivia Magiarin</a>
+        <a class="nav-brand" href="/">Rivia Magiarín</a>
 
         <button class="nav-hamburger" aria-label="Abrir menú">
             <span></span>
@@ -39,7 +41,7 @@
     </main>
 
     <footer>
-        <p>© 2025 Rivia Magiarin</p>
+        <p>© 2026 Rivia Magiarín</p>
     </footer>
 
     <script src="{{ url_for('static', filename='js/main.js') }}"></script>

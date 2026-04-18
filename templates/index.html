@@ -1,10 +1,79 @@
 {% extends 'base.html' %}
 
-{% block title %}Rivia Magiarin - Art & Stories{% endblock %}
+{% block title %}Rivia Magiarín - Art & Stories{% endblock %}
+
+{% block head %}
+<!--
+Si hasta aquí has llegado | mi sortilegio también te ha alcanzado
+Si estás leyendo este código fuente | hacia la FELICIDAD tienes un puente
+Si continúas leyendo con atención | el AMOR llena tu vida de gran emoción
+Si recorres este camino determinado | descubrirás en mi sortilegio un gran regalo
+Que la LUZ inunde tu vida | y que se curen | todas tus heridas
+Que el AMOR tu corazón cuide | y que tus ojos | de las lágrimas se libren
+Que la PROSPERIDAD llene tus manos | y satisfecho estés | en todos los planos
+Así está escrito y así será | por siempre y para siempre | ASÍ ES
+-->
+{% endblock %}
 
 {% block content %}
-<div class="hero">
-    <h1>Rivia Magiarin</h1>
-    <p>Art & Stories</p>
-</div>
+<section class="home-intro">
+
+    <img class="home-monogram" src="{{ url_for('static', filename='images/logoD.png') }}" alt="Rivia Magiarín monogram">
+
+
+    <div class="home-text">
+
+    {% if lang == 'en' %}
+
+    <p class="home-bio">
+        Rivia Magiarín is a mask and a window at the same time. Behind it lives an artist who has been drawing since
+        before she can remember — witches, cats, octopuses, hidden beings — who believes in the magic hidden in small
+        things and in the creatures that exist just at the edge of what we call real.
+    </p>
+    <blockquote class="home-quote">
+        "Of course it is happening inside your head, Harry, but why on earth should that mean that it is not real?"
+        <cite>— Albus Dumbledore</cite>
+    </blockquote>
+    <p class="home-spell">
+        There is a spell hidden somewhere on this page. You may not find it. But it will find you.
+        You don't need to believe, magic believes in you.
+    </p>
+
+    {% elif lang == 'gl' %}
+
+    <p class="home-bio">
+        Rivia Magiarín é unha máscara e unha fiestra á vez. Detrás vive unha artista que debuxou dende antes de ter
+        memoria — meigas, gatos, polbos, seres ocultos — que cre na maxia agochada nas cousas pequenas e nas criaturas
+        que existen xusto no bordo do que chamamos real.
+    </p>
+    <blockquote class="home-quote">
+        "Por suposto que está a suceder dentro da túa cabeza, Harry, pero por que demonios iso significaría que non é real?"
+        <cite>— Albus Dumbledore</cite>
+    </blockquote>
+    <p class="home-spell">
+        Hai un sortilexio agochado nalgún lugar desta páxina. Pode que non o atopes. Pero el si te atopará a ti.
+        Non precisas crer, a maxia cre en ti.
+    </p>
+
+    {% else %}
+
+    <p class="home-bio">
+        Rivia Magiarín es una máscara y una ventana al mismo tiempo. Detrás vive una artista que dibuja desde antes de
+        que tenga memoria — brujas, gatos, pulpos, seres ocultos — que cree en la magia escondida en las cosas pequeñas
+        y en las criaturas que existen justo al borde de lo que llamamos real.
+    </p>
+    <blockquote class="home-quote">
+        "Claro que está sucediendo dentro de tu cabeza, Harry, pero ¿por qué demonios eso significaría que no es real?"
+        <cite>— Albus Dumbledore</cite>
+    </blockquote>
+    <p class="home-spell">
+        Hay un sortilegio escondido en algún lugar de esta página. Puede que no lo encuentres. Pero él sí te encontrará
+        a ti. No necesitas creer, la magia cree en ti.
+    </p>
+
+    {% endif %}
+
+    </div>
+
+</section>
 {% endblock %}
