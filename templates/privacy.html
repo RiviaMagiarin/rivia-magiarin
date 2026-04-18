@@ -1,6 +1,89 @@
 {% extends 'base.html' %}
 
-{% block title %}Privacy Policy - Rivia Magiarín{% endblock %}
+{% block title %}
+{% if lang == 'en' %}Privacy Policy{% elif lang == 'gl' %}Política de Privacidade{% else %}Política de Privacidad{% endif %}
+- Rivia Magiarín
+{% endblock %}
 
 {% block content %}
+<section class="policy-page">
+
+    {% if lang == 'en' %}
+
+    <h1>Privacy Policy</h1>
+    <p class="legal-updated">Last updated: April 2026</p>
+
+    <dl>
+        <dt>Controller</dt>
+        <dd>Rivia Magiarín · <a href="mailto:contact@riviamagiarin.art">contact@riviamagiarin.art</a></dd>
+
+        <dt>Data collected</dt>
+        <dd>This website does not automatically collect personal data. The only personal data that may be processed is your email address if you choose to contact us voluntarily through the contact email.</dd>
+
+        <dt>Purpose</dt>
+        <dd>To respond to your enquiries or messages. Nothing more.</dd>
+
+        <dt>Third-party sharing</dt>
+        <dd>Your data is not shared or sold to third parties under any circumstances.</dd>
+
+        <dt>Google Analytics</dt>
+        <dd>This website uses Google Analytics to track the number of visits anonymously. Google may use cookies for this purpose. You can read Google's privacy policy at <a href="https://policies.google.com" target="_blank" rel="noopener">policies.google.com</a>.</dd>
+
+        <dt>Your rights</dt>
+        <dd>You have the right to access, rectify and delete your data by contacting <a href="mailto:contact@riviamagiarin.art">contact@riviamagiarin.art</a>.</dd>
+    </dl>
+
+    {% elif lang == 'gl' %}
+
+    <h1>Política de Privacidade</h1>
+    <p class="legal-updated">Última actualización: abril 2026</p>
+
+    <dl>
+        <dt>Responsable</dt>
+        <dd>Rivia Magiarín · <a href="mailto:contact@riviamagiarin.art">contact@riviamagiarin.art</a></dd>
+
+        <dt>Datos que se recollen</dt>
+        <dd>Este sitio web non recolle datos persoais de forma automática. O único dato persoal que podería tratarse é o teu enderezo de correo electrónico se decides contactar voluntariamente a través do correo de contacto.</dd>
+
+        <dt>Finalidade</dt>
+        <dd>Responder ás túas consultas ou mensaxes. Nada máis.</dd>
+
+        <dt>Cesión a terceiros</dt>
+        <dd>Os teus datos non se ceden nin se venden a terceiros baixo ningún concepto.</dd>
+
+        <dt>Google Analytics</dt>
+        <dd>Este sitio web usa Google Analytics para coñecer o número de visitas de forma anónima. Google pode usar cookies para este fin. Podes consultar a política de privacidade de Google en <a href="https://policies.google.com" target="_blank" rel="noopener">policies.google.com</a>.</dd>
+
+        <dt>Os teus dereitos</dt>
+        <dd>Tes dereito a acceder, rectificar e suprimir os teus datos contactando en <a href="mailto:contact@riviamagiarin.art">contact@riviamagiarin.art</a>.</dd>
+    </dl>
+
+    {% else %}
+
+    <h1>Política de Privacidad</h1>
+    <p class="legal-updated">Última actualización: abril 2026</p>
+
+    <dl>
+        <dt>Responsable</dt>
+        <dd>Rivia Magiarín · <a href="mailto:contact@riviamagiarin.art">contact@riviamagiarin.art</a></dd>
+
+        <dt>Datos que se recogen</dt>
+        <dd>Esta web no recoge datos personales de forma automática. El único dato personal que podría tratarse es tu dirección de email si decides contactar voluntariamente a través del email de contacto.</dd>
+
+        <dt>Finalidad</dt>
+        <dd>Responder a tus consultas o mensajes. Nada más.</dd>
+
+        <dt>Cesión a terceros</dt>
+        <dd>Tus datos no se ceden ni se venden a terceros bajo ningún concepto.</dd>
+
+        <dt>Google Analytics</dt>
+        <dd>Esta web utiliza Google Analytics para conocer el número de visitas de forma anónima. Google puede usar cookies para este fin. Puedes consultar la política de privacidad de Google en <a href="https://policies.google.com" target="_blank" rel="noopener">policies.google.com</a>.</dd>
+
+        <dt>Tus derechos</dt>
+        <dd>Tienes derecho a acceder, rectificar y suprimir tus datos contactando en <a href="mailto:contact@riviamagiarin.art">contact@riviamagiarin.art</a>.</dd>
+    </dl>
+
+    {% endif %}
+
+</section>
 {% endblock %}

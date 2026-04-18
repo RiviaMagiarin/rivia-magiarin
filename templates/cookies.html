@@ -1,6 +1,83 @@
 {% extends 'base.html' %}
 
-{% block title %}Cookies - Rivia Magiarín{% endblock %}
+{% block title %}
+{% if lang == 'en' %}Cookies Policy{% elif lang == 'gl' %}Política de Cookies{% else %}Política de Cookies{% endif %}
+- Rivia Magiarín
+{% endblock %}
 
 {% block content %}
+<section class="policy-page">
+
+    {% if lang == 'en' %}
+
+    <h1>Cookies Policy</h1>
+    <p class="legal-updated">Last updated: April 2026</p>
+
+    <h2>What are cookies?</h2>
+    <p>Cookies are small files stored on your device when you visit a website. They help remember your preferences and improve your browsing experience.</p>
+
+    <h2>What cookies does this website use?</h2>
+    <dl>
+        <dt>Necessary technical cookies</dt>
+        <dd>Essential for the website to function, such as remembering the language you have selected. They do not require your consent.</dd>
+
+        <dt>Analytical cookies (Google Analytics)</dt>
+        <dd>We use Google Analytics to track the number of visits anonymously. These cookies are only activated if you accept their use.</dd>
+    </dl>
+
+    <h2>How to manage cookies?</h2>
+    <p>You can accept or reject analytical cookies in the banner that appears when you enter the website. You can also configure your browser to block all cookies, although this may affect the website's functionality.</p>
+
+    <h2>More information</h2>
+    <p>See Google's cookie policy at <a href="https://policies.google.com" target="_blank" rel="noopener">policies.google.com</a>.</p>
+
+    {% elif lang == 'gl' %}
+
+    <h1>Política de Cookies</h1>
+    <p class="legal-updated">Última actualización: abril 2026</p>
+
+    <h2>Que son as cookies?</h2>
+    <p>As cookies son pequenos arquivos que se almacenan no teu dispositivo cando visitas un sitio web. Permiten lembrar as túas preferencias e mellorar a túa experiencia de navegación.</p>
+
+    <h2>Que cookies usa este sitio web?</h2>
+    <dl>
+        <dt>Cookies técnicas necesarias</dt>
+        <dd>Son imprescindibles para o funcionamento do sitio web, como lembrar o idioma que seleccionaches. Non requiren o teu consentimento.</dd>
+
+        <dt>Cookies analíticas (Google Analytics)</dt>
+        <dd>Usamos Google Analytics para coñecer o número de visitas de forma anónima. Estas cookies só se activan se aceptas o seu uso.</dd>
+    </dl>
+
+    <h2>Como xestionar as cookies?</h2>
+    <p>Podes aceptar ou rexeitar as cookies analíticas no banner que aparece ao entrar no sitio web. Tamén podes configurar o teu navegador para bloquear todas as cookies, aínda que isto podería afectar á funcionalidade do sitio web.</p>
+
+    <h2>Máis información</h2>
+    <p>Consulta a política de cookies de Google en <a href="https://policies.google.com" target="_blank" rel="noopener">policies.google.com</a>.</p>
+
+    {% else %}
+
+    <h1>Política de Cookies</h1>
+    <p class="legal-updated">Última actualización: abril 2026</p>
+
+    <h2>¿Qué son las cookies?</h2>
+    <p>Las cookies son pequeños archivos que se almacenan en tu dispositivo cuando visitas una web. Permiten recordar tus preferencias y mejorar tu experiencia de navegación.</p>
+
+    <h2>¿Qué cookies usa esta web?</h2>
+    <dl>
+        <dt>Cookies técnicas necesarias</dt>
+        <dd>Son imprescindibles para el funcionamiento de la web, como recordar el idioma que has seleccionado. No requieren tu consentimiento.</dd>
+
+        <dt>Cookies analíticas (Google Analytics)</dt>
+        <dd>Usamos Google Analytics para conocer el número de visitas de forma anónima. Estas cookies solo se activan si aceptas su uso.</dd>
+    </dl>
+
+    <h2>¿Cómo gestionar las cookies?</h2>
+    <p>Puedes aceptar o rechazar las cookies analíticas en el banner que aparece al entrar en la web. También puedes configurar tu navegador para bloquear todas las cookies, aunque esto podría afectar a la funcionalidad de la web.</p>
+
+    <h2>Más información</h2>
+    <p>Consulta la política de cookies de Google en <a href="https://policies.google.com" target="_blank" rel="noopener">policies.google.com</a>.</p>
+
+    {% endif %}
+
+</section>
 {% endblock %}

@@ -90,6 +90,45 @@ a:hover {
   }
 }
 
+.policy-page {
+  max-width: 800px;
+  margin: 3rem auto;
+  padding: 0 2rem 4rem;
+}
+.policy-page h1 {
+  margin-bottom: 0.25rem;
+}
+.policy-page h2 {
+  color: #c9a96e;
+  font-size: 1.05rem;
+  margin-top: 2rem;
+  margin-bottom: 0.6rem;
+}
+.policy-page p, .policy-page dd {
+  font-size: 0.95rem;
+  line-height: 1.9;
+  color: rgba(245, 240, 232, 0.85);
+}
+.policy-page dl {
+  display: flex;
+  flex-direction: column;
+  gap: 1.25rem;
+  margin-top: 0.5rem;
+}
+.policy-page dt {
+  font-weight: bold;
+  color: #f5f0e8;
+  font-size: 0.95rem;
+}
+.policy-page dd {
+  margin: 0.2rem 0 0 0;
+}
+.policy-page .legal-updated {
+  font-size: 0.85rem;
+  color: rgba(245, 240, 232, 0.45);
+  margin-bottom: 2rem;
+}
+
 footer {
   display: flex;
   justify-content: space-between;
