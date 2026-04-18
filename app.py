@@ -32,5 +32,19 @@ def canary_feast():
 def octopus():
     return render_template('octopus.html')
 
+@app.route('/privacy')
+def privacy():
+    lang = request.args.get('lang', 'en')
+    if lang not in LANGUAGES:
+        lang = 'en'
+    return render_template('privacy.html', lang=lang)
+
+@app.route('/cookies')
+def cookies():
+    lang = request.args.get('lang', 'en')
+    if lang not in LANGUAGES:
+        lang = 'en'
+    return render_template('cookies.html', lang=lang)
+
 if __name__ == '__main__':
     app.run(debug=True)
