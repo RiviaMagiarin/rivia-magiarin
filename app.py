@@ -8,7 +8,7 @@ app = Flask(__name__)
 LANGUAGES = ['en', 'es', 'gl']
 
 '''Esto es lo más importante. El @app.route('/') es como el @GetMapping("/") de Spring Boot. Le dice a Flask: "cuando alguien entre en la página principal, ejecuta la función index".'''
-@app.route('/')
+@app.route('/', methods=['GET'])
 def index():
     '''Lee el idioma de la URL (por ejemplo /?lang=es). Si no viene ninguno, usa inglés por defecto. Si viene uno que no existe, también usa inglés.'''
     lang = request.args.get('lang', 'en')
@@ -17,29 +17,29 @@ def index():
     '''Le manda el idioma elegido a la página HTML para que pueda usarlo.'''
     return render_template('index.html', lang=lang)
 
-@app.route('/cozy-witch')
+@app.route('/cozy-witch', methods=['GET'])
 def cozy_witch():
     lang = request.args.get('lang', 'en')
     if lang not in LANGUAGES:
         lang = 'en'
     return render_template('cozy_witch.html', lang=lang)
 
-@app.route('/canary-feast')
+@app.route('/canary-feast', methods=['GET'])
 def canary_feast():
     return render_template('canary_feast.html')
 
-@app.route('/octopus')
+@app.route('/octopus', methods=['GET'])
 def octopus():
     return render_template('octopus.html')
 
-@app.route('/privacy')
+@app.route('/privacy', methods=['GET'])
 def privacy():
     lang = request.args.get('lang', 'en')
     if lang not in LANGUAGES:
         lang = 'en'
     return render_template('privacy.html', lang=lang)
 
-@app.route('/cookies')
+@app.route('/cookies', methods=['GET'])
 def cookies():
     lang = request.args.get('lang', 'en')
     if lang not in LANGUAGES:

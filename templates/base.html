@@ -51,7 +51,7 @@
         </p>
     </footer>
 
-    <div id="cookie-banner" class="cookie-banner" role="dialog" aria-live="polite">
+    <dialog id="cookie-banner" class="cookie-banner" aria-live="polite">
         <p class="cookie-banner-text">
             {% if lang == 'en' %}
                 This website uses Google Analytics cookies to analyse traffic anonymously.
@@ -76,7 +76,7 @@
                 <button id="cookie-reject" class="cookie-btn cookie-btn--reject">Rechazar</button>
             {% endif %}
         </div>
-    </div>
+    </dialog>
 
     <script src="{{ url_for('static', filename='js/main.js') }}"></script>
 </body>
