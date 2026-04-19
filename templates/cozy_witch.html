@@ -1,7 +1,433 @@
-{% extends "base.html" %}
+{% extends 'base.html' %}
 
-<!--Título específico de la página que aparece en el navegador-->
-{% block title %}The Cozy Witch - Rivia Magiarín{% endblock %}
+{% block title %}The Cozy Witch Collection - Rivia Magiarín{% endblock %}
 
-<!--El hueco donde va todo el contenido de la página-->
-{% block content %}{% endblock %}
+{% block content %}
+
+<section class="cozy-hero">
+    <img class="cozy-hero__image" src="{{ url_for('static', filename='images/cozyWitch.png') }}" alt="The Cozy Witch Collection">
+    <h1 class="cozy-hero__title">The Cozy Witch Collection</h1>
+</section>
+
+<article class="cozy-content">
+
+    <section class="cozy-intro">
+        {% if lang == 'en' %}
+        <p>Deep in the heart of the forests, among mills, hórreos and enchanted ruins, where slender rays of sunlight filter through the centuries old trees, moss embraces the rocks and ivy claims its territory over ancient stones, the Cozy Witches make their home.</p>
+        {% elif lang == 'gl' %}
+        <p>No máis profundo da fraga, entre muiños, canastos e ruinas encantadas; alí onde os finos raios de sol se filtran entre as árboles centenarias, o musgo abraza as rochas e as enredadeiras reclaman o seu territorio cubrindo antigas pedras, as Cozy Witches teñen o seu fogar.</p>
+        {% else %}
+        <p>En lo más profundo de los bosques, entre molinos, hórreos y ruinas encantadas; allí donde los finos rayos de sol se filtran entre los árboles centenarios, el musgo abraza las rocas y las enredaderas reclaman su territorio cubriendo antiguas piedras, las Cozy Witches tienen su hogar.</p>
+        {% endif %}
+    </section>
+
+    <section class="cozy-groups">
+        <h2>
+            {% if lang == 'en' %}Each little witch is born with a unique spark within her own group.
+            {% elif lang == 'gl' %}Cada meiga nace cunha faísca única dentro do seu propio grupo.
+            {% else %}Cada brujita nace con una chispa única dentro de su propio grupo.{% endif %}
+        </h2>
+
+        <ul class="cozy-groups__list">
+
+            <li class="cozy-groups__item">
+                <img class="cozy-groups__icon" src="{{ url_for('static', filename='images/spoon.avif') }}" alt="spoon">
+                <div>
+                    <h3>{% if lang == 'en' %}Cooks{% elif lang == 'gl' %}Cociñeiras{% else %}Cocineras{% endif %}</h3>
+                    {% if lang == 'en' %}
+                    <p>There are the Cozy Witches who cook, recognizable by the spoon they always carry in their hand. They take care of everything and everyone: some cook, others prepare potions, ointments, salves… even moisturizing creams.</p>
+                    {% elif lang == 'gl' %}
+                    <p>Están as Cozy Witches cociñeiras, reconocibles pola culler que sempre levan na man. Elas coidan de todo e de todos: unas cociñan, outras preparan pocións, ungüentos, pomadas… incluso cremas hidratantes.</p>
+                    {% else %}
+                    <p>Están las Cozy Witches cocineras, reconocibles por la cuchara que siempre llevan en la mano. Ellas cuidan de todo y de todos: unas cocinan, otras preparan pociones, ungüentos, pomadas… incluso cremas hidratantes.</p>
+                    {% endif %}
+                </div>
+            </li>
+
+            <li class="cozy-groups__item">
+                <img class="cozy-groups__icon" src="{{ url_for('static', filename='images/brush.avif') }}" alt="brush">
+                <div>
+                    <h3>{% if lang == 'en' %}Painters{% elif lang == 'gl' %}Pintoras{% else %}Pintoras{% endif %}</h3>
+                    {% if lang == 'en' %}
+                    <p>There are also the painters, who carry a brush and keep colors in their bags. They are responsible for everything that blooms: with their touch, plants awaken and trees grow.</p>
+                    {% elif lang == 'gl' %}
+                    <p>Tamén temos as pintoras, que portan un pincel e gardan cores nos seus bolsos. Son as responsables de todo o que florece: con seu toque, as plantas espertan e as árboles crecen.</p>
+                    {% else %}
+                    <p>También tenemos a las pintoras, que portan un pincel y guardan colores en sus bolsos. Son las responsables de todo lo que florece: con su toque, las plantas despiertan y los árboles crecen.</p>
+                    {% endif %}
+                </div>
+            </li>
+
+            <li class="cozy-groups__item">
+                <img class="cozy-groups__icon" src="{{ url_for('static', filename='images/feather.avif') }}" alt="feather">
+                <div>
+                    <h3>{% if lang == 'en' %}Writers{% elif lang == 'gl' %}Escritoras{% else %}Escritoras{% endif %}</h3>
+                    {% if lang == 'en' %}
+                    <p>The writers are never missing, always with a quill in hand. They devote themselves to telling stories, because in the forest everything —absolutely everything— has a story worth writing.</p>
+                    {% elif lang == 'gl' %}
+                    <p>Non faltan as escritoras, sempre cunha pluma na man. Elas dedícanse a contar historias, porque na fraga todo, absolutamente todo, ten una historia que merece ser escrita.</p>
+                    {% else %}
+                    <p>No faltan las escritoras, siempre con una pluma en la mano. Ellas se dedican a contar historias, porque en el bosque todo, absolutamente todo, tiene una historia que merece ser escrita.</p>
+                    {% endif %}
+                </div>
+            </li>
+
+            <li class="cozy-groups__item">
+                <img class="cozy-groups__icon" src="{{ url_for('static', filename='images/wand.avif') }}" alt="wand">
+                <div>
+                    <h3>{% if lang == 'en' %}Fine Wand Witches{% elif lang == 'gl' %}Variteiras finas{% else %}Variteras finas{% endif %}</h3>
+                    {% if lang == 'en' %}
+                    <p>With their fine and elegant wand they practice subtle magic: they move the wind, control fire, and fine-tune the light.</p>
+                    {% elif lang == 'gl' %}
+                    <p>Coa súa variña fina e elegante practican unha maxia sutil: moven o vento, controlan o lume, afinan a luz.</p>
+                    {% else %}
+                    <p>Con su varita fina y elegante practican una magia sutil: mueven el viento, controlan el fuego, afinan la luz.</p>
+                    {% endif %}
+                </div>
+            </li>
+
+            <li class="cozy-groups__item">
+                <img class="cozy-groups__icon" src="{{ url_for('static', filename='images/elderWand.avif') }}" alt="elder wand">
+                <div>
+                    <h3>{% if lang == 'en' %}Rough Wand Witches{% elif lang == 'gl' %}Variteiras toscas{% else %}Variteras toscas{% endif %}</h3>
+                    {% if lang == 'en' %}
+                    <p>They carry simple, twisted wands like ancient branches. They work with a rougher, more primal magic, one that vibrates with the earth and the blood of trees.</p>
+                    {% elif lang == 'gl' %}
+                    <p>Portan variñas simples e retoras coma polas antigas. Traballan cunha maxia máis basta e primitiva, que vibra coa terra e co sangue das árbores.</p>
+                    {% else %}
+                    <p>Portan varitas simples y retorcidas como ramas antiguas. Trabajan con una magia más tosca y primitiva, que vibra con la tierra y la sangre de los árboles.</p>
+                    {% endif %}
+                </div>
+            </li>
+
+            <li class="cozy-groups__item">
+                <img class="cozy-groups__icon" src="{{ url_for('static', filename='images/daisy.avif') }}" alt="daisy">
+                <div>
+                    <h3>{% if lang == 'en' %}Gardeners{% elif lang == 'gl' %}Xardineiras{% else %}Jardineras{% endif %}</h3>
+                    {% if lang == 'en' %}
+                    <p>The gardeners carry a flower and are the guardians of the seasons. They know what must grow at each moment of the year and ensure the forest breathes at the right rhythm: they plant according to the cycle, tend what blooms, and prepare the earth for what is yet to come.</p>
+                    {% elif lang == 'gl' %}
+                    <p>As xardineiras portan unha flor e son as gardiás das estacións. Saben o que debe crecer en cada momento do ano e ocupanse de que a fraga respire ao ritmo correcto: plantan segundo o ciclo, coidan o que florece e preparan a terra para o que está por vir.</p>
+                    {% else %}
+                    <p>Las jardineras portan una flor y son las guardianas de las estaciones. Saben qué debe crecer en cada momento del año y se ocupan de que el bosque respire al ritmo correcto: plantan según el ciclo, cuidan lo que florece y preparan la tierra para lo que está por venir.</p>
+                    {% endif %}
+                </div>
+            </li>
+
+            <li class="cozy-groups__item">
+                <img class="cozy-groups__icon" src="{{ url_for('static', filename='images/lollipop.avif') }}" alt="lollipop">
+                <div>
+                    <h3>{% if lang == 'en' %}Bakers{% elif lang == 'gl' %}Reposteiras{% else %}Reposteras{% endif %}</h3>
+                    {% if lang == 'en' %}
+                    <p>The purple lollipop bakers are the warm heart of the forest. Like a grandmother who knows all the remedies, they pamper their family with homemade sweets full of love. Their recipes are not precise, they are felt: a pinch of this, a handful of that, and always, always, a secret ingredient that only they know.</p>
+                    {% elif lang == 'gl' %}
+                    <p>As reposteiras de piruleta morada son o corazón cálido da fraga. Coma unha avoa que coñece todos os remedios, miman á súa familia con postres caseiros cheos de amor. As súas receitas non son exactas, son sentidas: unha pitada disto, un puñado daquilo, e sempre, sempre, un ingrediente secreto que só elas coñecen.</p>
+                    {% else %}
+                    <p>Las reposteras de piruleta morada son el corazón cálido del bosque. Como una abuela que conoce todos los remedios, miman a su familia con postres caseros llenos de amor. Sus recetas no son exactas, son sentidas: una pizca de esto, un puñado de aquello, y siempre, siempre, un ingrediente secreto que solo ellas conocen.</p>
+                    {% endif %}
+                </div>
+            </li>
+
+            <li class="cozy-groups__item">
+                <img class="cozy-groups__icon" src="{{ url_for('static', filename='images/strawberryLollipop.avif') }}" alt="strawberry lollipop">
+                <div>
+                    <h3>{% if lang == 'en' %}Pastry Witches{% elif lang == 'gl' %}Pasteleiras{% else %}Pasteleras{% endif %}</h3>
+                    {% if lang == 'en' %}
+                    <p>The pink lollipop pastry witches are the artisans of refined sweetness. Like the elegant wand witches, they work with millimetric precision: exact recipes, polished flavours, impeccable presentations. In their hands, pastry becomes art. They do not improvise, they perfect.</p>
+                    {% elif lang == 'gl' %}
+                    <p>As reposteiras de piruleta rosa son as artesás do doce refinado. Coma as variteiras elegantes, traballan con precisión milimétrica: receitas exactas, sabores pulidos, presentacións impecables. Nas súas mans, a repostería convértese en arte. Non improvisan, perfeccionan.</p>
+                    {% else %}
+                    <p>Las reposteras de piruleta rosa son las artesanas del dulce refinado. Como las variteras elegantes, trabajan con precisión milimétrica: recetas exactas, sabores pulidos, presentaciones impecables. En sus manos, la pastelería se convierte en arte. No improvisan, perfeccionan.</p>
+                    {% endif %}
+                </div>
+            </li>
+
+            <li class="cozy-groups__item">
+                <img class="cozy-groups__icon" src="{{ url_for('static', filename='images/broom.avif') }}" alt="broom">
+                <div>
+                    <h3>{% if lang == 'en' %}Flyers{% elif lang == 'gl' %}Voadoras{% else %}Voladoras{% endif %}</h3>
+                    {% if lang == 'en' %}
+                    <p>The flyers carry their broom with pride and rule the skies of the forest. From above they watch over everything: that the home is safe, that peace reigns among the trees, that humans do not venture beyond the paths. They are the eyes of the forest, and nothing escapes them.</p>
+                    {% elif lang == 'gl' %}
+                    <p>As voadoras portan a súa vasoira con orgullo e gobernan os ceos da fraga. Desde as alturas vixían todo: que o fogar estea a salvo, que a paz reine entre as árbores, que os humanos non se aventuren máis alá dos sendeiros. Son os ollos da fraga, e nada se lles escapa.</p>
+                    {% else %}
+                    <p>Las voladoras portan su escoba con orgullo y gobiernan los cielos del bosque. Desde las alturas lo vigilan todo: que el hogar esté a salvo, que la paz reine entre los árboles, que los humanos no se aventuren más allá de los senderos. Son los ojos del bosque, y nada se les escapa.</p>
+                    {% endif %}
+                </div>
+            </li>
+
+            <li class="cozy-groups__item">
+                <img class="cozy-groups__icon" src="{{ url_for('static', filename='images/parchment.avif') }}" alt="parchment">
+                <div>
+                    <h3>{% if lang == 'en' %}Newly Graduated{% elif lang == 'gl' %}Recén licenciadas{% else %}Recién licenciadas{% endif %}</h3>
+                    {% if lang == 'en' %}
+                    <p>And finally, though no less important, are the newly graduated Cozy Witches. You can recognize them because they proudly show off their diploma, which they carry everywhere. They are the youngest and still don't know who they are; they must discover their group and the spark that defines them.</p>
+                    {% elif lang == 'gl' %}
+                    <p>E para rematar, pero non menos importantes, están as Cozy Witches recen licenciadas. Recoñéceselles porque presumen do seu título, que levan a todas partes. Son as máis novas e aínda non saben quen son; aínda deben descubrir o seu grupo e a faísca que as define.</p>
+                    {% else %}
+                    <p>Y por último, pero no menos importantes, están las Cozy Witches recién licenciadas. Se las reconoce porque presumen de su título, que llevan a todas partes. Son las más jóvenes y aún no saben quiénes son; todavía deben descubrir su grupo y la chispa que las define.</p>
+                    {% endif %}
+                </div>
+            </li>
+
+        </ul>
+    </section>
+
+    <section class="cozy-flame">
+        <h2>
+            {% if lang == 'en' %}The Eternal Flame
+            {% elif lang == 'gl' %}A Chama Eterna
+            {% else %}La Llama Eterna{% endif %}
+        </h2>
+        {% if lang == 'en' %}
+        <p>For centuries, they have protected the balance of the forest, keeping the Eternal Flame of Life alive — an ancient magic that responds only to kind hearted souls.</p>
+        <p>With their gentle craft they command the light, speak with animals, weave spells of protection or good fortune, and, on occasion, grant their gifts to a newborn human.</p>
+        {% elif lang == 'gl' %}
+        <p>Durante séculos, todas elas protexeron o equilibrio da fraga, mantendo viva a Chama Eterna da Vida, unha maxia antiga que só responde a corazóns bondadosos.</p>
+        <p>Co seu bo facer dominan a luz, falan cos animais, tecen feitizos de protección ou boa fortuna e, en ocasións, conceden os seus dons a algún humano recen nacido.</p>
+        {% else %}
+        <p>Durante siglos, todas ellas han protegido el equilibrio del bosque, manteniendo viva la Llama Eterna de la Vida, una magia antigua que solo responde a corazones bondadosos.</p>
+        <p>Con su buen hacer dominan la luz, hablan con los animales, tejen hechizos de protección o buena fortuna y, en ocasiones, conceden sus dones a algún humano recién nacido.</p>
+        {% endif %}
+    </section>
+
+    <section class="cozy-smiles">
+        <h2>
+            {% if lang == 'en' %}Their Smiles
+            {% elif lang == 'gl' %}Os seus sorrisos
+            {% else %}Sus sonrisas{% endif %}
+        </h2>
+        {% if lang == 'en' %}
+        <p>Their vibrant personalities are reflected in their smiles, which always reach their eyes. Yet the shade of each smile sets them apart.</p>
+        {% elif lang == 'gl' %}
+        <p>As súas vibrantes personalidades reflíctense nos seus sorrisos, que sempre chegan aos ollos. Con todo, o matiz de cada sorriso as distingue.</p>
+        {% else %}
+        <p>Sus vibrantes personalidades se reflejan en sus sonrisas, que siempre llegan a los ojos. Sin embargo, el matiz de cada sonrisa las distingue.</p>
+        {% endif %}
+
+        <ul class="cozy-smiles__list">
+
+            <li class="cozy-smiles__item">
+                <img src="{{ url_for('static', filename='images/mischievous.avif') }}" alt="mischievous smile">
+                {% if lang == 'en' %}
+                <p>Some show all their teeth, trying to hide mischief or the small disasters born from their curiosity.</p>
+                {% elif lang == 'gl' %}
+                <p>Algunhas mostran todos os dentes, intentando ocultar trasnadas ou pequenas desfeitas froito da súa curiosidade.</p>
+                {% else %}
+                <p>Algunas muestran todos los dientes, intentando ocultar travesuras o pequeños desastres fruto de su curiosidad.</p>
+                {% endif %}
+            </li>
+
+            <li class="cozy-smiles__item">
+                <img src="{{ url_for('static', filename='images/satisfied.avif') }}" alt="satisfied smile">
+                {% if lang == 'en' %}
+                <p>Others smile with a feline, closed and satisfied expression, confident in what they do and who they are.</p>
+                {% elif lang == 'gl' %}
+                <p>Outras sorrín cunha expresión felina, pechada e satisfeita, seguras do que fan e do que son.</p>
+                {% else %}
+                <p>Otras sonríen con una expresión felina, cerrada y satisfecha, seguras de lo que hacen y de lo que son.</p>
+                {% endif %}
+            </li>
+
+            <li class="cozy-smiles__item">
+                <img src="{{ url_for('static', filename='images/halfSmile.avif') }}" alt="half smile">
+                {% if lang == 'en' %}
+                <p>The shyest barely tilt their lips.</p>
+                {% elif lang == 'gl' %}
+                <p>As máis tímidas apenas ladean os beizos.</p>
+                {% else %}
+                <p>Las más tímidas apenas ladean los labios.</p>
+                {% endif %}
+            </li>
+
+            <li class="cozy-smiles__item">
+                <img src="{{ url_for('static', filename='images/containedJoy.avif') }}" alt="contained smile">
+                {% if lang == 'en' %}
+                <p>Others hold back their smile because they don't like being the center of attention, even though they enjoy being appreciated.</p>
+                {% elif lang == 'gl' %}
+                <p>Outras conteñen o sorriso porque non lles gusta ser o centro de atención, aínda que gozan do recoñecemento.</p>
+                {% else %}
+                <p>Otras contienen la sonrisa porque no les gusta ser el centro de atención, aunque disfrutan del reconocimiento.</p>
+                {% endif %}
+            </li>
+
+            <li class="cozy-smiles__item">
+                <img src="{{ url_for('static', filename='images/bigSmile.avif') }}" alt="big smile">
+                {% if lang == 'en' %}
+                <p>There are also those with wide, open smiles: the most innocent, playful and sweet toothed, always chasing bees to steal a little honey.</p>
+                {% elif lang == 'gl' %}
+                <p>Tamén están as do sorriso amplo e aberto: as máis inocentes, rebuldeiras e lambonas, sempre perseguindo abellas para roubarlles un pouco de mel.</p>
+                {% else %}
+                <p>También están las de sonrisa amplia y abierta: las más inocentes, juguetonas y golosas, siempre persiguiendo abejas para robarles un poco de miel.</p>
+                {% endif %}
+            </li>
+
+            <li class="cozy-smiles__item">
+                <img src="{{ url_for('static', filename='images/littleOh.avif') }}" alt="singing mouth">
+                {% if lang == 'en' %}
+                <p>And, of course, there are the ones who express their joy by singing, with their little mouths shaped like an O; all of them, naturally, sopranos.</p>
+                {% elif lang == 'gl' %}
+                <p>E, por suposto, están as que expresan a súa ledicia cantando, coa boquiña en forma de O; todas elas, naturalmente, sopranos.</p>
+                {% else %}
+                <p>Y, por supuesto, están las que expresan su alegría cantando, con la boquita en forma de O; todas ellas, naturalmente, sopranos.</p>
+                {% endif %}
+            </li>
+
+        </ul>
+    </section>
+
+    <section class="cozy-hair">
+        <h2>
+            {% if lang == 'en' %}Their Hair
+            {% elif lang == 'gl' %}Os seus cabelos
+            {% else %}Sus cabellos{% endif %}
+        </h2>
+        {% if lang == 'en' %}
+        <p>The color of their hair is no coincidence, either.</p>
+        {% elif lang == 'gl' %}
+        <p>A cor dos seus cabelos tampouco é casualidade.</p>
+        {% else %}
+        <p>El color de sus cabellos tampoco es casualidad.</p>
+        {% endif %}
+
+        <ul class="cozy-hair__list">
+
+            <li class="cozy-hair__item">
+                <img src="{{ url_for('static', filename='images/silver.avif') }}" alt="silver hair">
+                {% if lang == 'en' %}
+                <p><strong>Silver</strong> — The most serene, able to bring peace with their mere presence.</p>
+                {% elif lang == 'gl' %}
+                <p><strong>Prateado</strong> — As máis sereas, capaces de aportar paz só coa súa presenza.</p>
+                {% else %}
+                <p><strong>Plateado</strong> — Las más serenas, capaces de aportar paz solo con su presencia.</p>
+                {% endif %}
+            </li>
+
+            <li class="cozy-hair__item">
+                <img src="{{ url_for('static', filename='images/pink.avif') }}" alt="pink hair">
+                {% if lang == 'en' %}
+                <p><strong>Sporty pink</strong> — Pure energy: having one nearby is like multiplying vitality by a thousand.</p>
+                {% elif lang == 'gl' %}
+                <p><strong>Rosa deportivo</strong> — Pura enerxía: ter unha preto é coma multiplicar a vitalidade por mil.</p>
+                {% else %}
+                <p><strong>Rosa deportivo</strong> — Pura energía: tener una cerca es como multiplicar la vitalidad por mil.</p>
+                {% endif %}
+            </li>
+
+            <li class="cozy-hair__item">
+                <img src="{{ url_for('static', filename='images/red.avif') }}" alt="red hair">
+                {% if lang == 'en' %}
+                <p><strong>Light cadmium red</strong> — Passionate, pouring their whole being into whatever they do, sometimes overflowing with their own emotions.</p>
+                {% elif lang == 'gl' %}
+                <p><strong>Vermello cadmio claro</strong> — Apaixonadas, volcadas por completo no que fan, ás veces desbordadas polas súas propias emocións.</p>
+                {% else %}
+                <p><strong>Rojo cadmio claro</strong> — Apasionadas, volcadas por completo en lo que hacen, a veces desbordadas por sus propias emociones.</p>
+                {% endif %}
+            </li>
+
+            <li class="cozy-hair__item">
+                <img src="{{ url_for('static', filename='images/aureolin.avif') }}" alt="aureolin hair">
+                {% if lang == 'en' %}
+                <p><strong>Aureolin (yellow)</strong> — Stand out for their intelligence, though they sometimes play dumb to avoid being bothered with trivialities.</p>
+                {% elif lang == 'gl' %}
+                <p><strong>Aureolin (amarelo)</strong> — Destacan pola súa intelixencia, aínda que ás veces se fan as parvas para evitar que as molesten con nimiedades.</p>
+                {% else %}
+                <p><strong>Aureolin (amarillo)</strong> — Destacan por su inteligencia, aunque a veces se hacen las tontas para evitar que las molesten con nimiedades.</p>
+                {% endif %}
+            </li>
+
+            <li class="cozy-hair__item">
+                <img src="{{ url_for('static', filename='images/harlequin.avif') }}" alt="harlequin hair">
+                {% if lang == 'en' %}
+                <p><strong>Harlequin (green)</strong> — Eccentric and independent, the most likely to get into trouble due to their innate curiosity; they are, in a way, the scientists of the forest.</p>
+                {% elif lang == 'gl' %}
+                <p><strong>Harlequín (verde vivo)</strong> — Excéntricas e independentes, as máis propensas a meterse en leas pola súa curiosidade innata; son, de certo xeito, as científicas da fraga.</p>
+                {% else %}
+                <p><strong>Harlequín (verde vivo)</strong> — Excéntricas e independientes, las más propensas a meterse en líos por su curiosidad innata; son, en cierto modo, las científicas del bosque.</p>
+                {% endif %}
+            </li>
+
+            <li class="cozy-hair__item">
+                <img src="{{ url_for('static', filename='images/black.avif') }}" alt="black hair">
+                {% if lang == 'en' %}
+                <p><strong>Black</strong> — Serious and focused, always ready to help and solve problems.</p>
+                {% elif lang == 'gl' %}
+                <p><strong>Negro</strong> — Serias e centradas, sempre dispostas a axudar e a resolver problemas.</p>
+                {% else %}
+                <p><strong>Negro</strong> — Serias y centradas, siempre dispuestas a ayudar y a resolver problemas.</p>
+                {% endif %}
+            </li>
+
+            <li class="cozy-hair__item">
+                <img src="{{ url_for('static', filename='images/blue.avif') }}" alt="blue aura hair">
+                {% if lang == 'en' %}
+                <p><strong>Blue aura</strong> — The most spiritual and ethereal, with a deep bond to the spirits of the forest; you know one is near when, suddenly, it feels as though the wind's whispers can be understood.</p>
+                {% elif lang == 'gl' %}
+                <p><strong>Aura azul</strong> — As máis espirituais e etéreas, cun vínculo profundo cos espíritos da fraga; sábese que unha está preto cando, de súpeto, parece que se entende o que o vento rumorea.</p>
+                {% else %}
+                <p><strong>Aura azul</strong> — Las más espirituales y etéreas, con un vínculo profundo con los espíritus del bosque; se sabe que una está cerca cuando, de repente, parece que se entiende lo que el viento susurra.</p>
+                {% endif %}
+            </li>
+
+            <li class="cozy-hair__item">
+                <img src="{{ url_for('static', filename='images/orange.avif') }}" alt="orange hair">
+                {% if lang == 'en' %}
+                <p><strong>Philippine orange</strong> — The most playful and mischievous, with hearts too big for their chests. They carry joy wherever they go.</p>
+                {% elif lang == 'gl' %}
+                <p><strong>Laranxa filipina</strong> — As máis divertidas e falcatrueiras, cun corazón que non lles cabe no peito. Levan a ledicia alí onde van.</p>
+                {% else %}
+                <p><strong>Naranja filipina</strong> — Las más divertidas y traviesas, con un corazón que no les cabe en el pecho. Llevan la alegría allí donde van.</p>
+                {% endif %}
+            </li>
+
+        </ul>
+    </section>
+
+    <section class="cozy-reveal">
+        <h2>
+            {% if lang == 'en' %}The Revelation
+            {% elif lang == 'gl' %}A Revelación
+            {% else %}La Revelación{% endif %}
+        </h2>
+        {% if lang == 'en' %}
+        <p>Now, for the first time, the Cozy Witches have decided to reveal themselves to the human world. With their hats, amulets and colors, they unveil their gifts, their stories and their destinies.</p>
+        <p>Each NFT represents a unique little witch, with her own personality, her magic and her mission.</p>
+        <p>Whoever adopts a Cozy Witch receives more than art: they receive a magical companion, a guardian, and a small piece of the ancient enchanted forest.</p>
+        {% elif lang == 'gl' %}
+        <p>Agora, por primeira vez, as Cozy Witches decidiron mostrarse ao mundo humano. Cos seus chapeus, amuletos e cores, revelan os seus dons, as súas historias e os seus destinos.</p>
+        <p>Cada NFT representa unha meiguiña única, coa súa personalidade, a súa maxia e a súa misión.</p>
+        <p>Quen adopta unha Cozy Witch non só recibe arte: recibe unha compañeira máxica, unha gardiá e un pedaciño da antiga fraga encantada.</p>
+        {% else %}
+        <p>Ahora, por primera vez, las Cozy Witches han decidido mostrarse al mundo humano. Con sus sombreros, amuletos y colores, revelan sus dones, sus historias y sus destinos.</p>
+        <p>Cada NFT representa a una brujita única, con su personalidad, su magia y su misión.</p>
+        <p>Quien adopta una Cozy Witch no solo recibe arte: recibe una compañera mágica, una guardiana y un pedacito del antiguo bosque encantado.</p>
+        {% endif %}
+    </section>
+
+    <section class="cozy-epilogue">
+        {% if lang == 'en' %}
+        <p>The forest continues to pulse, just as it has for centuries, keeping secrets that reveal themselves only to those who know how to look with clear eyes. The Cozy Witches, now visible to the human world, carry on their quiet work: they protect, create, heal and celebrate life in all its forms.</p>
+        <p>Each one carries a unique spark, a small flame that never fades and can now travel farther than ever before. Whoever welcomes one of these little witches receives a living story, a bond with ancient magic, and a promise of companionship.</p>
+        <p>For as long as there is someone willing to believe, to listen and to care, the forest will never fall silent. And the Cozy Witches, grateful, will always answer.</p>
+        {% elif lang == 'gl' %}
+        <p>A fraga segue a latexar, igual que fixo durante séculos, gardando segredos que só se revelan a quen sabe mirar con ollos limpos. As Cozy Witches, agora visibles ao mundo humano, continúan o seu labor silencioso: protexen, crean, curan e celebran a vida en todas as súas formas.</p>
+        <p>Cada unha delas leva unha faísca única, un pequeno lume que non se apaga e que agora pode viaxar máis lonxe ca nunca. Quen acolle unha destas meiguiñas leva consigo unha historia viva, un vínculo coa maxia antiga e unha promesa de compañía.</p>
+        <p>Porque, mentres exista alguén disposto a crer, a escoitar e a coidar, a fraga nunca deixará de falar. E as Cozy Witches, agradecidas, seguirán respondendo.</p>
+        {% else %}
+        <p>El bosque sigue latiendo, igual que lo ha hecho durante siglos, guardando secretos que solo se revelan a quienes saben mirar con ojos limpios. Las Cozy Witches, ahora visibles para el mundo humano, continúan su labor silenciosa: protegen, crean, curan y celebran la vida en todas sus formas.</p>
+        <p>Cada una de ellas lleva una chispa única, un pequeño fuego que nunca se apaga y que ahora puede viajar más lejos que nunca. Quien acoge a una de estas brujitas recibe una historia viva, un vínculo con la magia antigua y una promesa de compañía.</p>
+        <p>Porque, mientras exista alguien dispuesto a creer, a escuchar y a cuidar, el bosque nunca dejará de hablar. Y las Cozy Witches, agradecidas, seguirán respondiendo.</p>
+        {% endif %}
+    </section>
+
+    <section class="cozy-cta">
+        <a class="cozy-cta__btn" href="https://opensea.io/collection/the-cozy-witch-collection" target="_blank" rel="noopener noreferrer">
+            {% if lang == 'en' %}View on OpenSea
+            {% elif lang == 'gl' %}Ver en OpenSea
+            {% else %}Ver en OpenSea{% endif %}
+        </a>
+    </section>
+
+</article>
+
+{% endblock %}

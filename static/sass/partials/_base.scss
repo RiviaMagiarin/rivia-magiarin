@@ -172,11 +172,20 @@ a {
 }
 
 .cookie-banner {
+    // resets necesarios al usar <dialog> en lugar de <div>
+    border: none;
+    margin: 0;
+    padding: 0;
+    max-width: none;
+    max-height: none;
+    background: none;
+
     display: none;
     position: fixed;
     bottom: 0;
     left: 0;
-    right: 0;
+    width: 100%;
+    box-sizing: border-box;
     z-index: 1000;
     background-color: lighten($color-dark, 5%);
     border-top: 1px solid $color-accent;
@@ -186,6 +195,7 @@ a {
     justify-content: space-between;
     gap: 1.5rem;
 
+    // especificidad 0,2,1 — supera el UA dialog:not([open]) (0,1,1)
     &.visible {
         display: flex;
     }
