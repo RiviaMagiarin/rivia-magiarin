@@ -302,6 +302,14 @@
 
 // ─── Responsive ───────────────────────────────────────────────────────────────
 @media (max-width: 768px) {
+    .cozy-hero {
+        height: 60vh;
+    }
+
+    .cozy-hero__image {
+        object-position: right center;
+    }
+
     .cozy-hero__title {
         font-size: clamp(1.5rem, 6vw, 2.4rem);
         margin-top: 10vh;

@@ -1,8 +1,28 @@
 '''Importamos Flask, y dos herramientas de Flask: render_template (para mostrar páginas HTML) y request (para leer lo que nos manda el navegador).'''
-from flask import Flask, render_template, request, send_from_directory
+from flask import Flask, render_template, request, send_from_directory, g
+import secrets
 
 '''Creamos la aplicación. Es como instanciar una clase en Java: App app = new App(). El __name__ le dice a Flask dónde está el proyecto.'''
 app = Flask(__name__)
+
+
+# 1) Generar nonce antes de cada request
+@app.before_request
+def set_nonce():
+    g.nonce = secrets.token_hex(16)
+
+# 2) Añadir la CSP después de cada request
+@app.after_request
+def add_csp(response):
+    response.headers["Content-Security-Policy"] = (
+        f"default-src 'self'; "
+        f"script-src 'self' 'nonce-{g.nonce}' https://www.googletagmanager.com https://www.google-analytics.com; "
+        f"connect-src 'self' https://www.google-analytics.com https://region1.google-analytics.com https://www.googletagmanager.com; "
+        f"style-src 'self' 'unsafe-inline' https:; "
+        f"img-src 'self' data: https:; "
+        f"font-src 'self' https: data:;"
+    )
+    return response
 
 # Idiomas disponibles
 LANGUAGES = ['en', 'es', 'gl']
