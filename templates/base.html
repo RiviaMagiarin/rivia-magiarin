@@ -21,6 +21,7 @@
     <meta property="og:type" content="website">
     <link rel="canonical" href="{{ request.base_url }}">
     <link rel="icon" type="image/x-icon" href="{{ url_for('static', filename='images/favicon.ico') }}">
+    <link rel="preload" type="image/avif" as="image" href="{{ url_for('static', filename='images/logo.avif') }}" >
     <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
     {% block head %}{% endblock %}
 </head>
