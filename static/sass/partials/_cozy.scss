@@ -333,6 +333,14 @@
         padding: 1.25rem;
     }
 
+    .cozy-groups__item:nth-child(even) {
+        flex-direction: column;
+    }
+
+    .cozy-groups__item:nth-child(even) .cozy-groups__icon {
+        align-self: flex-end;
+    }
+
     .cozy-smiles__item,
     .cozy-hair__item {
         flex-direction: column;
@@ -341,6 +349,14 @@
         img {
             max-width: 100%;
         }
+    }
+
+    .cozy-smiles__item:nth-child(even) {
+        flex-direction: column;
+    }
+
+    .cozy-smiles__item:nth-child(even) img {
+        align-self: flex-end;
     }
 
     .cozy-epilogue { padding: 1.25rem; }

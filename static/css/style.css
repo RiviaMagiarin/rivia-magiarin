@@ -78,7 +78,7 @@ a:hover {
   font-style: italic;
   line-height: 1.7;
 }
-@media (max-width: 480px) {
+@media (max-width: 860px) {
   .home-intro {
     flex-direction: column;
     align-items: center;
@@ -670,6 +670,12 @@ nav .nav-lang a.active {
     gap: 0.5rem;
     padding: 1.25rem;
   }
+  .cozy-groups__item:nth-child(even) {
+    flex-direction: column;
+  }
+  .cozy-groups__item:nth-child(even) .cozy-groups__icon {
+    align-self: flex-end;
+  }
   .cozy-smiles__item,
   .cozy-hair__item {
     flex-direction: column;
@@ -678,6 +684,12 @@ nav .nav-lang a.active {
   .cozy-smiles__item img,
   .cozy-hair__item img {
     max-width: 100%;
+  }
+  .cozy-smiles__item:nth-child(even) {
+    flex-direction: column;
+  }
+  .cozy-smiles__item:nth-child(even) img {
+    align-self: flex-end;
   }
   .cozy-epilogue {
     padding: 1.25rem;
