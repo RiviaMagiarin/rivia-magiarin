@@ -9,7 +9,10 @@
 {% block content %}
 
 <section class="cozy-hero">
-    <img class="cozy-hero__image" fetchpriority="high" src="{{ url_for('static', filename='images/cozyWitch.avif') }}" alt="The Cozy Witch Collection">
+    <picture>
+        <source media="(max-width: 767px)" srcset="{{ url_for('static', filename='images/cozyWitchMobile.avif') }}">
+        <img class="cozy-hero__image" fetchpriority="high" src="{{ url_for('static', filename='images/cozyWitch.avif') }}" alt="The Cozy Witch Collection">
+    </picture>
     <h1 class="cozy-hero__title">The Cozy Witch Collection</h1>
 </section>
 
