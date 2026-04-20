@@ -1,5 +1,5 @@
 '''Importamos Flask, y dos herramientas de Flask: render_template (para mostrar páginas HTML) y request (para leer lo que nos manda el navegador).'''
-from flask import Flask, render_template, request
+from flask import Flask, render_template, request, send_from_directory
 
 '''Creamos la aplicación. Es como instanciar una clase en Java: App app = new App(). El __name__ le dice a Flask dónde está el proyecto.'''
 app = Flask(__name__)
@@ -45,6 +45,14 @@ def cookies():
     if lang not in LANGUAGES:
         lang = 'en'
     return render_template('cookies.html', lang=lang)
+
+@app.route('/robots.txt')
+def robots():
+    return send_from_directory(app.root_path, 'robots.txt')
+
+@app.route('/sitemap.xml')
+def sitemap():
+    return send_from_directory(app.root_path, 'sitemap.xml')
 
 if __name__ == '__main__':
     app.run(debug=True)

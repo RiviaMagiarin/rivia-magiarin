@@ -2,10 +2,14 @@
 
 {% block title %}The Cozy Witch Collection - Rivia Magiarín{% endblock %}
 
+{% block description %}The Cozy Witch Collection - 10.000 brujitas únicas que habitan los bosques encantados de Rivia Magiarín. Descubre su historia, sus grupos y su magia.{% endblock %}
+
+{% block og_image %}{{ url_for('static', filename='images/cozyWitch.avif', _external=True) }}{% endblock %}
+
 {% block content %}
 
 <section class="cozy-hero">
-    <img class="cozy-hero__image" src="{{ url_for('static', filename='images/cozyWitch.avif') }}" alt="The Cozy Witch Collection">
+    <img class="cozy-hero__image" fetchpriority="high" src="{{ url_for('static', filename='images/cozyWitch.avif') }}" alt="The Cozy Witch Collection">
     <h1 class="cozy-hero__title">The Cozy Witch Collection</h1>
 </section>
 
