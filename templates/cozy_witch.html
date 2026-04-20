@@ -5,7 +5,7 @@
 {% block content %}
 
 <section class="cozy-hero">
-    <img class="cozy-hero__image" src="{{ url_for('static', filename='images/cozyWitch.png') }}" alt="The Cozy Witch Collection">
+    <img class="cozy-hero__image" src="{{ url_for('static', filename='images/cozyWitch.avif') }}" alt="The Cozy Witch Collection">
     <h1 class="cozy-hero__title">The Cozy Witch Collection</h1>
 </section>
 
@@ -31,7 +31,7 @@
         <ul class="cozy-groups__list">
 
             <li class="cozy-groups__item">
-                <img class="cozy-groups__icon" src="{{ url_for('static', filename='images/spoon.avif') }}" alt="spoon">
+                <img class="cozy-groups__icon" loading="lazy" src="{{ url_for('static', filename='images/spoon.avif') }}" alt="spoon">
                 <div>
                     <h3>{% if lang == 'en' %}Cooks{% elif lang == 'gl' %}Cociñeiras{% else %}Cocineras{% endif %}</h3>
                     {% if lang == 'en' %}
@@ -45,7 +45,7 @@
             </li>
 
             <li class="cozy-groups__item">
-                <img class="cozy-groups__icon" src="{{ url_for('static', filename='images/brush.avif') }}" alt="brush">
+                <img class="cozy-groups__icon" loading="lazy" src="{{ url_for('static', filename='images/brush.avif') }}" alt="brush">
                 <div>
                     <h3>{% if lang == 'en' %}Painters{% elif lang == 'gl' %}Pintoras{% else %}Pintoras{% endif %}</h3>
                     {% if lang == 'en' %}
@@ -59,7 +59,7 @@
             </li>
 
             <li class="cozy-groups__item">
-                <img class="cozy-groups__icon" src="{{ url_for('static', filename='images/feather.avif') }}" alt="feather">
+                <img class="cozy-groups__icon" loading="lazy" src="{{ url_for('static', filename='images/feather.avif') }}" alt="feather">
                 <div>
                     <h3>{% if lang == 'en' %}Writers{% elif lang == 'gl' %}Escritoras{% else %}Escritoras{% endif %}</h3>
                     {% if lang == 'en' %}
@@ -73,7 +73,7 @@
             </li>
 
             <li class="cozy-groups__item">
-                <img class="cozy-groups__icon" src="{{ url_for('static', filename='images/wand.avif') }}" alt="wand">
+                <img class="cozy-groups__icon" loading="lazy" src="{{ url_for('static', filename='images/wand.avif') }}" alt="wand">
                 <div>
                     <h3>{% if lang == 'en' %}Fine Wand Witches{% elif lang == 'gl' %}Variteiras finas{% else %}Variteras finas{% endif %}</h3>
                     {% if lang == 'en' %}
@@ -87,7 +87,7 @@
             </li>
 
             <li class="cozy-groups__item">
-                <img class="cozy-groups__icon" src="{{ url_for('static', filename='images/elderWand.avif') }}" alt="elder wand">
+                <img class="cozy-groups__icon" loading="lazy" src="{{ url_for('static', filename='images/elderWand.avif') }}" alt="elder wand">
                 <div>
                     <h3>{% if lang == 'en' %}Rough Wand Witches{% elif lang == 'gl' %}Variteiras toscas{% else %}Variteras toscas{% endif %}</h3>
                     {% if lang == 'en' %}
@@ -101,7 +101,7 @@
             </li>
 
             <li class="cozy-groups__item">
-                <img class="cozy-groups__icon" src="{{ url_for('static', filename='images/daisy.avif') }}" alt="daisy">
+                <img class="cozy-groups__icon" loading="lazy" src="{{ url_for('static', filename='images/daisy.avif') }}" alt="daisy">
                 <div>
                     <h3>{% if lang == 'en' %}Gardeners{% elif lang == 'gl' %}Xardineiras{% else %}Jardineras{% endif %}</h3>
                     {% if lang == 'en' %}
@@ -115,7 +115,7 @@
             </li>
 
             <li class="cozy-groups__item">
-                <img class="cozy-groups__icon" src="{{ url_for('static', filename='images/lollipop.avif') }}" alt="lollipop">
+                <img class="cozy-groups__icon" loading="lazy" src="{{ url_for('static', filename='images/lollipop.avif') }}" alt="lollipop">
                 <div>
                     <h3>{% if lang == 'en' %}Bakers{% elif lang == 'gl' %}Reposteiras{% else %}Reposteras{% endif %}</h3>
                     {% if lang == 'en' %}
@@ -129,7 +129,7 @@
             </li>
 
             <li class="cozy-groups__item">
-                <img class="cozy-groups__icon" src="{{ url_for('static', filename='images/strawberryLollipop.avif') }}" alt="strawberry lollipop">
+                <img class="cozy-groups__icon" loading="lazy" src="{{ url_for('static', filename='images/strawberryLollipop.avif') }}" alt="strawberry lollipop">
                 <div>
                     <h3>{% if lang == 'en' %}Pastry Witches{% elif lang == 'gl' %}Pasteleiras{% else %}Pasteleras{% endif %}</h3>
                     {% if lang == 'en' %}
@@ -143,7 +143,7 @@
             </li>
 
             <li class="cozy-groups__item">
-                <img class="cozy-groups__icon" src="{{ url_for('static', filename='images/broom.avif') }}" alt="broom">
+                <img class="cozy-groups__icon" loading="lazy" src="{{ url_for('static', filename='images/broom.avif') }}" alt="broom">
                 <div>
                     <h3>{% if lang == 'en' %}Flyers{% elif lang == 'gl' %}Voadoras{% else %}Voladoras{% endif %}</h3>
                     {% if lang == 'en' %}
@@ -157,7 +157,7 @@
             </li>
 
             <li class="cozy-groups__item">
-                <img class="cozy-groups__icon" src="{{ url_for('static', filename='images/parchment.avif') }}" alt="parchment">
+                <img class="cozy-groups__icon" loading="lazy" src="{{ url_for('static', filename='images/parchment.avif') }}" alt="parchment">
                 <div>
                     <h3>{% if lang == 'en' %}Newly Graduated{% elif lang == 'gl' %}Recén licenciadas{% else %}Recién licenciadas{% endif %}</h3>
                     {% if lang == 'en' %}
@@ -208,7 +208,7 @@
         <ul class="cozy-smiles__list">
 
             <li class="cozy-smiles__item">
-                <img src="{{ url_for('static', filename='images/mischievous.avif') }}" alt="mischievous smile">
+                <img loading="lazy" src="{{ url_for('static', filename='images/mischievous.avif') }}" alt="mischievous smile">
                 {% if lang == 'en' %}
                 <p>Some show all their teeth, trying to hide mischief or the small disasters born from their curiosity.</p>
                 {% elif lang == 'gl' %}
@@ -219,7 +219,7 @@
             </li>
 
             <li class="cozy-smiles__item">
-                <img src="{{ url_for('static', filename='images/satisfied.avif') }}" alt="satisfied smile">
+                <img loading="lazy" src="{{ url_for('static', filename='images/satisfied.avif') }}" alt="satisfied smile">
                 {% if lang == 'en' %}
                 <p>Others smile with a feline, closed and satisfied expression, confident in what they do and who they are.</p>
                 {% elif lang == 'gl' %}
@@ -230,7 +230,7 @@
             </li>
 
             <li class="cozy-smiles__item">
-                <img src="{{ url_for('static', filename='images/halfSmile.avif') }}" alt="half smile">
+                <img loading="lazy" src="{{ url_for('static', filename='images/halfSmile.avif') }}" alt="half smile">
                 {% if lang == 'en' %}
                 <p>The shyest barely tilt their lips.</p>
                 {% elif lang == 'gl' %}
@@ -241,7 +241,7 @@
             </li>
 
             <li class="cozy-smiles__item">
-                <img src="{{ url_for('static', filename='images/containedJoy.avif') }}" alt="contained smile">
+                <img loading="lazy" src="{{ url_for('static', filename='images/containedJoy.avif') }}" alt="contained smile">
                 {% if lang == 'en' %}
                 <p>Others hold back their smile because they don't like being the center of attention, even though they enjoy being appreciated.</p>
                 {% elif lang == 'gl' %}
@@ -252,7 +252,7 @@
             </li>
 
             <li class="cozy-smiles__item">
-                <img src="{{ url_for('static', filename='images/bigSmile.avif') }}" alt="big smile">
+                <img loading="lazy" src="{{ url_for('static', filename='images/bigSmile.avif') }}" alt="big smile">
                 {% if lang == 'en' %}
                 <p>There are also those with wide, open smiles: the most innocent, playful and sweet toothed, always chasing bees to steal a little honey.</p>
                 {% elif lang == 'gl' %}
@@ -263,7 +263,7 @@
             </li>
 
             <li class="cozy-smiles__item">
-                <img src="{{ url_for('static', filename='images/littleOh.avif') }}" alt="singing mouth">
+                <img loading="lazy" src="{{ url_for('static', filename='images/littleOh.avif') }}" alt="singing mouth">
                 {% if lang == 'en' %}
                 <p>And, of course, there are the ones who express their joy by singing, with their little mouths shaped like an O; all of them, naturally, sopranos.</p>
                 {% elif lang == 'gl' %}
@@ -293,7 +293,7 @@
         <ul class="cozy-hair__list">
 
             <li class="cozy-hair__item">
-                <img src="{{ url_for('static', filename='images/silver.avif') }}" alt="silver hair">
+                <img loading="lazy" src="{{ url_for('static', filename='images/silver.avif') }}" alt="silver hair">
                 {% if lang == 'en' %}
                 <p><strong>Silver</strong> — The most serene, able to bring peace with their mere presence.</p>
                 {% elif lang == 'gl' %}
@@ -304,7 +304,7 @@
             </li>
 
             <li class="cozy-hair__item">
-                <img src="{{ url_for('static', filename='images/pink.avif') }}" alt="pink hair">
+                <img loading="lazy" src="{{ url_for('static', filename='images/pink.avif') }}" alt="pink hair">
                 {% if lang == 'en' %}
                 <p><strong>Sporty pink</strong> — Pure energy: having one nearby is like multiplying vitality by a thousand.</p>
                 {% elif lang == 'gl' %}
@@ -315,7 +315,7 @@
             </li>
 
             <li class="cozy-hair__item">
-                <img src="{{ url_for('static', filename='images/red.avif') }}" alt="red hair">
+                <img loading="lazy" src="{{ url_for('static', filename='images/red.avif') }}" alt="red hair">
                 {% if lang == 'en' %}
                 <p><strong>Light cadmium red</strong> — Passionate, pouring their whole being into whatever they do, sometimes overflowing with their own emotions.</p>
                 {% elif lang == 'gl' %}
@@ -326,7 +326,7 @@
             </li>
 
             <li class="cozy-hair__item">
-                <img src="{{ url_for('static', filename='images/aureolin.avif') }}" alt="aureolin hair">
+                <img loading="lazy" src="{{ url_for('static', filename='images/aureolin.avif') }}" alt="aureolin hair">
                 {% if lang == 'en' %}
                 <p><strong>Aureolin (yellow)</strong> — Stand out for their intelligence, though they sometimes play dumb to avoid being bothered with trivialities.</p>
                 {% elif lang == 'gl' %}
@@ -337,7 +337,7 @@
             </li>
 
             <li class="cozy-hair__item">
-                <img src="{{ url_for('static', filename='images/harlequin.avif') }}" alt="harlequin hair">
+                <img loading="lazy" src="{{ url_for('static', filename='images/harlequin.avif') }}" alt="harlequin hair">
                 {% if lang == 'en' %}
                 <p><strong>Harlequin (green)</strong> — Eccentric and independent, the most likely to get into trouble due to their innate curiosity; they are, in a way, the scientists of the forest.</p>
                 {% elif lang == 'gl' %}
@@ -348,7 +348,7 @@
             </li>
 
             <li class="cozy-hair__item">
-                <img src="{{ url_for('static', filename='images/black.avif') }}" alt="black hair">
+                <img loading="lazy" src="{{ url_for('static', filename='images/black.avif') }}" alt="black hair">
                 {% if lang == 'en' %}
                 <p><strong>Black</strong> — Serious and focused, always ready to help and solve problems.</p>
                 {% elif lang == 'gl' %}
@@ -359,7 +359,7 @@
             </li>
 
             <li class="cozy-hair__item">
-                <img src="{{ url_for('static', filename='images/blue.avif') }}" alt="blue aura hair">
+                <img loading="lazy" src="{{ url_for('static', filename='images/blue.avif') }}" alt="blue aura hair">
                 {% if lang == 'en' %}
                 <p><strong>Blue aura</strong> — The most spiritual and ethereal, with a deep bond to the spirits of the forest; you know one is near when, suddenly, it feels as though the wind's whispers can be understood.</p>
                 {% elif lang == 'gl' %}
@@ -370,7 +370,7 @@
             </li>
 
             <li class="cozy-hair__item">
-                <img src="{{ url_for('static', filename='images/orange.avif') }}" alt="orange hair">
+                <img loading="lazy" src="{{ url_for('static', filename='images/orange.avif') }}" alt="orange hair">
                 {% if lang == 'en' %}
                 <p><strong>Philippine orange</strong> — The most playful and mischievous, with hearts too big for their chests. They carry joy wherever they go.</p>
                 {% elif lang == 'gl' %}
