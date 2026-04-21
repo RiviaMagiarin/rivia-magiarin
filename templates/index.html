@@ -24,12 +24,11 @@ Así está escrito y así es | por siempre y para siempre | HECHO ES
 
     <img class="home-monogram" src="{{ url_for('static', filename='images/logo.avif') }}" alt="Rivia Magiarín monogram">
 
-
     <div class="home-text">
-    <h1 class="visually-hidden">Rivia Magiarín - Art & Stories</h1>
-
 
     {% if lang == 'en' %}
+
+    <h1 class="visually-hidden">Rivia Magiarín - A universe of magic and stories</h1>
 
     <p class="home-bio">
         Rivia Magiarín is a mask and a window at the same time. Behind it lives an artist who has been drawing since
@@ -47,6 +46,8 @@ Así está escrito y así es | por siempre y para siempre | HECHO ES
 
     {% elif lang == 'gl' %}
 
+    <h1 class="visually-hidden">Rivia Magiarín - Un universo de maxia e historias</h1>
+
     <p class="home-bio">
         Rivia Magiarín é unha máscara e unha fiestra á vez. Detrás vive unha artista que debuxou dende antes de ter
         memoria — meigas, gatos, polbos, seres ocultos — que cre na maxia agochada nas cousas pequenas e nas criaturas
@@ -62,6 +63,8 @@ Así está escrito y así es | por siempre y para siempre | HECHO ES
     </p>
 
     {% else %}
+
+    <h1 class="visually-hidden">Rivia Magiarín - Un universo de magia e historias</h1>
 
     <p class="home-bio">
         Rivia Magiarín es una máscara y una ventana al mismo tiempo. Detrás vive una artista que dibuja desde antes de
@@ -80,6 +83,47 @@ Así está escrito y así es | por siempre y para siempre | HECHO ES
     {% endif %}
 
     </div>
+
+</section>
+
+<section class="home-origins">
+
+    <article class="home-origin home-origin--cozy">
+        <h2><a href="/cozy-witch">The Cozy Witch</a></h2>
+
+        <div class="home-origin__row">
+            <div class="home-origin__text">
+                {% if lang == 'en' %}
+                <p>The first Cozy Witch was born in 2009 — a girl in black, mischievous smile, a crooked branch for a wand and a tiny black cat tucked in her pocket, echoing Kiki the witch apprentice. Her socks never matched. Her hat ribbon was always red. She came from a love of digital painting and a little of Son Goku's wild spirit.</p>
+                {% elif lang == 'gl' %}
+                <p>A primeira Cozy Witch naceu en 2009 — unha nena de negro, sorriso pícaro, unha póla torcida por variña e un gatiño negro no peto, evocando a Kiki, a aprendiz de meiga. As súas medias nunca combinaban. A banda do sombreiro, sempre vermella. Chegou do amor pola pintura dixital e un pouco do espírito salvaxe de Son Goku.</p>
+                {% else %}
+                <p>La primera Cozy Witch nació en 2009 — una niña de negro, sonrisa traviesa, una rama torcida por varita y un gatito negro en el bolsillo, evocando a Kiki, la aprendiz de bruja. Sus medias nunca hacían juego. La banda de su sombrero, siempre roja. Llegó del amor por la pintura digital y un poco del espíritu salvaje de Son Goku.</p>
+                {% endif %}
+            </div>
+            <img class="home-origin__img"
+                 loading="lazy"
+                 src="{{ url_for('static', filename='images/cozyWitch_2009.avif') }}"
+                 alt="The original Cozy Witch, 2009">
+        </div>
+
+        <div class="home-origin__row home-origin__row--reverse">
+            <div class="home-origin__text">
+                {% if lang == 'en' %}
+                <p>Two years later, her arm found a better angle and her smile grew a little more defiant, leaving behind the too-childlike character of the original. That was the Cozy Witch.</p>
+                {% elif lang == 'gl' %}
+                <p>Dous anos despois, o seu brazo atopou un ángulo mellor e o seu sorriso volveuse un pouco máis desafiante, deixando atrás o carácter demasiado infantil da orixinal. Esa foi a Cozy Witch.</p>
+                {% else %}
+                <p>Dos años después, su brazo encontró un ángulo mejor y su sonrisa se volvió un poco más desafiante, dejando atrás el carácter demasiado infantil de la original. Esa fue la Cozy Witch.</p>
+                {% endif %}
+            </div>
+            <img class="home-origin__img"
+                 loading="lazy"
+                 src="{{ url_for('static', filename='images/cozyWitch_2011.avif') }}"
+                 alt="The Cozy Witch, revised 2011">
+        </div>
+
+    </article>
 
 </section>
 {% endblock %}
