@@ -46,7 +46,10 @@ def cozy_witch():
 
 @app.route('/canary-feast', methods=['GET'])
 def canary_feast():
-    return render_template('canary_feast.html')
+    lang = request.args.get('lang', 'en')
+    if lang not in LANGUAGES:
+        lang = 'en'
+    return render_template('canary_feast.html', lang=lang)
 
 @app.route('/octopus', methods=['GET'])
 def octopus():
