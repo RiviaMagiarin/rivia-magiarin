@@ -1,5 +1,243 @@
 {% extends "base.html" %}
 
-{% block title %}Canary Feast - Rivia Magiarín{% endblock %}
+{% block title %}Rivia Magiarín - Metamorphosis - Canary Feast{% endblock %}
 
-{% block content %}{% endblock %}
+{% block description %}Canary Feast - Colección que narra el destino de un gato que apareció para amar, incluso a través de sus travesuras.{% endblock %}
+
+{% block og_image %}{{ url_for('static', filename='images/canaryFeast.avif', _external=True) }}{% endblock %}
+
+{% block content %}
+<section class="canary-hero">
+    <picture>
+        <source media="(max-width: 767px)" srcset="{{ url_for('static', filename='images/canaryFeastMobile.avif') }}">
+        <img class="canary-hero__image" fetchpriority="high" src="{{ url_for('static', filename='images/canaryFeast.avif') }}" alt="Metamorphosis Collection- Canary Feast">
+    </picture>
+    <h1 class="canary-hero__title">Canary Feast</h1>
+</section>
+
+<article class="canary-content">
+
+    <section class="canary-intro">
+        {% if lang == 'en' %}
+        <p>Where reality folds to become art. “Metamorphosis — Canary Feast” is a living and limited series that follows the transformation of a single being: the cat who devoured the canary. Each piece reveals a different mutation —chromatic, emotional, symbolic— along its journey from pencil on paper to digital light. An intimate evolution that mirrors the transition from VMGA to Rivia Magiarín, guided by intuition, mystery, and the silent presence of the black cat as an inner guardian.</p>
+        {% elif lang == 'gl' %}
+        <p>Onde a realidade se dobra para converterse en arte. “Metamorphosis — Canary Feast” é unha serie viva e limitada que segue a transformación dun único ser: o gato que devorou o canario. Cada peza revela unha mutación distinta —cromática, emocional, simbólica— no seu camiño do trazo en papel á luz dixital. Unha evolución íntima que acompaña a transición de VMGA a Rivia Magiarín, guiada pola intuición, o misterio e a presenza silenciosa do gato negro como gardián interior.</p>
+        {% else %}
+        <p>Donde la realidad se pliega para convertirse en arte. “Metamorphosis — Canary Feast” es una serie viva y limitada que sigue la transformación de un único ser: el gato que devoró al canario. Cada pieza revela una mutación distinta —cromática, emocional, simbólica— en su viaje del trazo en papel a la luz digital. Una evolución íntima que acompaña la transición de VMGA a Rivia Magiarín, guiada por la intuición, el misterio y la presencia silenciosa del gato negro como guardián interior.</p>
+        {% endif %}
+    </section>
+
+    <section class="canary-phase">
+        <h2 class="canary-phase__title">
+            {% if lang == 'en' %}Phase I{% else %}Fase I{% endif %}
+        </h2>
+        <ul class="canary-phase__list">
+
+            <li class="canary-phase__item">
+                <img class="canary-phase__img" loading="lazy" src="{{ url_for('static', filename='images/theCanaryFeast.avif') }}" alt="The Canary Feast">
+                <div class="canary-phase__text">
+                    <h3>{% if lang == 'en' %}The Canary Feast{% elif lang == 'gl' %}O Banquete do Gatiño{% else %}El Banquete del Minino{% endif %}</h3>
+                    {% if lang == 'en' %}
+                    <p>The canary didn't disappear — it transcended. This little feline, calm as one who has fulfilled an inevitable destiny, rests among golden feathers that recount the act already done. The white heart on its chest remains untouched, like a seal of inner truth. Its gaze, serene yet defiant, reveals a nature that knows nothing of guilt — only essence. A piece that celebrates instinct, metamorphosis, and the light that rises from chaos.</p>
+                    {% elif lang == 'gl' %}
+                    <p>O canario non desapareceu: transcendeu. Este gatiño, coa calma de quen cumpriu un destino inevitable, repousa entre plumas douradas que narran o acto consumado. O corazón branco no peito permanece intacto, como un selo de verdade interior. A súa mirada, serea e desafiante, revela unha natureza que non entende de culpa, só de esencia. Unha peza que celebra o instinto, a metamorfose e a luz que nace do caos.</p>
+                    {% else %}
+                    <p>El canario no desapareció: Trascendió. Este gatito, con la calma de quien cumplió un destino inevitable, reposa entre plumas doradas que narran el acto consumado. El corazón blanco en el pecho permanece intacto, como un sello de verdad interior. Su mirada, serena y desafiante, revela una naturaleza que no entiende de culpa, solo de esencia. Una pieza que celebra el instinto, su metamorfosis y la luz que nace del caos.</p>
+                    {% endif %}
+                </div>
+            </li>
+
+            <li class="canary-phase__item">
+                <img class="canary-phase__img" loading="lazy" src="{{ url_for('static', filename='images/lastMorsels.avif') }}" alt="The Last Morsels">
+                <div class="canary-phase__text">
+                    <h3>{% if lang == 'en' %}The Last Morsels{% elif lang == 'gl' %}Os Derradeiros Bocados{% else %}Los Últimos Bocados{% endif %}</h3>
+                    {% if lang == 'en' %}
+                    <p>The feast draws to its close. As the feline's gaze sharpens, only three golden feathers remain suspended in the air — a fleeting testament to what once was.</p>
+                    {% elif lang == 'gl' %}
+                    <p>O festín achégase ao seu fin. Mentres a mirada do gatiño se agudiza, só tres plumas douradas permanecen suspendidas no aire — un testemuño fugaz do que algunha vez foi.</p>
+                    {% else %}
+                    <p>El festín se acerca a su fin. Mientras la mirada del felino se agudiza, solo tres plumas doradas permanecen suspendidas en el aire — un testimonio fugaz de lo que alguna vez fue.</p>
+                    {% endif %}
+                </div>
+            </li>
+
+        </ul>
+    </section>
+
+    <section class="canary-phase">
+        <h2 class="canary-phase__title">
+            {% if lang == 'en' %}Phase II{% else %}Fase II{% endif %}
+        </h2>
+        <ul class="canary-phase__list">
+
+            <li class="canary-phase__item">
+                <img class="canary-phase__img" loading="lazy" src="{{ url_for('static', filename='images/limeMutation.avif') }}" alt="Lime Mutation">
+                <div class="canary-phase__text">
+                    <h3>{% if lang == 'en' %}Lime Mutation{% elif lang == 'gl' %}Mutación Lima{% else %}Mutación Lima{% endif %}</h3>
+                    {% if lang == 'en' %}
+                    <p>The mutation reaches a vibrant peak. Amidst a lime-coloured haze, the predator remains calm — its green eyes reflecting the wild power of a transformation that has only just begun.</p>
+                    {% elif lang == 'gl' %}
+                    <p>A mutación acada o seu punto máis vibrante. Entre unha bruma cor lima, o depredador mantén a calma — os seus ollos verdes refliten o poder salvaxe dunha transformación que apenas acaba de comezar.</p>
+                    {% else %}
+                    <p>La mutación alcanza su punto más vibrante. Entre una bruma color lima, el depredador mantiene la calma — sus ojos verdes reflejan el poder salvaje de una transformación que apenas acaba de comenzar.</p>
+                    {% endif %}
+                </div>
+            </li>
+
+            <li class="canary-phase__item">
+                <img class="canary-phase__img" loading="lazy" src="{{ url_for('static', filename='images/cyanEcho.avif') }}" alt="Cyan Echo">
+                <div class="canary-phase__text">
+                    <h3>{% if lang == 'en' %}Cyan Echo{% elif lang == 'gl' %}Azul Ceo{% else %}Azul Cielo{% endif %}</h3>
+                    <em class="canary-phase__tagline">{% if lang == 'en' %}The protection of the sky{% elif lang == 'gl' %}A protección do ceo{% else %}La protección del cielo{% endif %}</em>
+                    {% if lang == 'en' %}
+                    <p>The feast was just the beginning. Is it a predator yielding to sleep, or a warning to the world? The golden mark spreads as the canary finds its new home within. A yawn that echoes through the hórreos — a metamorphosis that is now bone, muscle, and a song that lives inside.</p>
+                    {% elif lang == 'gl' %}
+                    <p>O festín foi só o principio. É un depredador rendéndose ao sono ou unha advertencia ao mundo? A marca dourada esténdese mentres o canario atopa o seu novo fogar no interior. Un bocexo que resoa entre os hórreos — unha metamorfose que xa é óso, músculo e un canto que vive dentro.</p>
+                    {% else %}
+                    <p>El festín fue solo el principio. ¿Es un depredador rindiéndose al sueño o una advertencia al mundo? La marca dorada se extiende mientras el canario encuentra su nuevo hogar en el interior. Un bostezo que resuena entre los hórreos — una metamorfosis que ya es hueso, músculo y un canto que vive dentro.</p>
+                    {% endif %}
+                </div>
+            </li>
+
+            <li class="canary-phase__item">
+                <img class="canary-phase__img" loading="lazy" src="{{ url_for('static', filename='images/amberWake.avif') }}" alt="Amber Wake">
+                <div class="canary-phase__text">
+                    <h3>{% if lang == 'en' %}Amber Wake{% elif lang == 'gl' %}Vixilia Ámbar{% else %}Vigilia Ámbar{% endif %}</h3>
+                    <em class="canary-phase__tagline">{% if lang == 'en' %}The warmth of the afternoon over the hórreos{% elif lang == 'gl' %}A calor da tarde sobre os canastos{% else %}El calor de la tarde sobre los hórreos{% endif %}</em>
+                    {% if lang == 'en' %}
+                    <p>The golden light settles soft and unhurried. The predator basks, heavy with contentment — transformation wearing the face of joy, warm as late sun on stone.</p>
+                    {% elif lang == 'gl' %}
+                    <p>A luz dourada pósase suave e inevitable. O depredador repousa, cheo de satisfacción — a transformación co rostro da ledicia, cálida coma o sol da tarde sobre a pedra.</p>
+                    {% else %}
+                    <p>La luz dorada se asienta suave e inevitable. El depredador reposa, pleno de satisfacción — la transformación con rostro de alegría, cálida como el sol de tarde sobre la piedra.</p>
+                    {% endif %}
+                </div>
+            </li>
+
+            <li class="canary-phase__item">
+                <img class="canary-phase__img" loading="lazy" src="{{ url_for('static', filename='images/goldenBreath.avif') }}" alt="The Golden Breath">
+                <div class="canary-phase__text">
+                    <h3>{% if lang == 'en' %}The Golden Breath{% elif lang == 'gl' %}O Alento de Ouro{% else %}El Aliento de Oro{% endif %}</h3>
+                    {% if lang == 'en' %}
+                    <p>In the darkness, a tiny yellow head with bright little eyes peeks from between the feline's fangs. The canary did not flee — it built its nest inside. And the cat, black as night, allows it. Guardian and jailer. Captor and shelter. Two natures, one breath.</p>
+                    {% elif lang == 'gl' %}
+                    <p>Na escuridade, unha pequena cabecita amarela de brillantes olliños asoma entre os caneiros do felino. O canario non fuxiu — construíu o seu niño dentro. E o gato, negro coma a noite, permíteo. Gardián e carcereiro. Captor e refuxio. Dúas naturezas, un só alento.</p>
+                    {% else %}
+                    <p>En la oscuridad, una pequeña cabecita amarilla de brillantes ojitos asoma entre los colmillos del felino. El canario no huyó — construyó su nido dentro. Y el gato, negro como la noche, lo permite. Guardián y carcelero. Captor y refugio. Dos naturalezas, un solo aliento.</p>
+                    {% endif %}
+                </div>
+            </li>
+
+        </ul>
+    </section>
+
+    <section class="canary-phase">
+        <h2 class="canary-phase__title">
+            {% if lang == 'en' %}Phase III{% else %}Fase III{% endif %}
+        </h2>
+        <ul class="canary-phase__list">
+
+            <li class="canary-phase__item">
+                <img class="canary-phase__img" loading="lazy" src="{{ url_for('static', filename='images/dreamFeathers.avif') }}" alt="The Dream in Feathers">
+                <div class="canary-phase__text">
+                    <h3>{% if lang == 'en' %}The Dream in Feathers{% elif lang == 'gl' %}O Soño entre Plumas{% else %}El Sueño entre Plumas{% endif %}</h3>
+                    {% if lang == 'en' %}
+                    <p>A quiet moment suspended between breaths, where transformation rests beneath soft feathers. A gentle state of becoming — an intimate pause in the cycle of metamorphosis, wrapped in calm, warmth, and silent renewal.</p>
+                    {% elif lang == 'gl' %}
+                    <p>Un instante silandeiro suspendido entre respiracións, onde a transformación repousa baixo suaves plumas. Un estado delicado de devir — unha pausa íntima no ciclo da metamorfose, envolta en quietude, calidez e renovación silandeira.</p>
+                    {% else %}
+                    <p>Un instante silencioso suspendido entre respiraciones, donde la transformación reposa bajo suaves plumas. Un estado delicado de devenir — una pausa íntima en el ciclo de la metamorfosis, envuelta en calma, calidez y renovación silenciosa.</p>
+                    {% endif %}
+                </div>
+            </li>
+
+            <li class="canary-phase__item">
+                <img class="canary-phase__img" loading="lazy" src="{{ url_for('static', filename='images/sleepingChrysalis.avif') }}" alt="The Sleeping Chrysalis">
+                <div class="canary-phase__text">
+                    <h3>{% if lang == 'en' %}The Sleeping Chrysalis{% elif lang == 'gl' %}A Crisálida Durminte{% else %}La Crisálida Durmiente{% endif %}</h3>
+                    {% if lang == 'en' %}
+                    <p>Wrapped in dreams and instinct, the cat begins to reshape itself. The chrysalis forms quietly, fed by what it once consumed.</p>
+                    {% elif lang == 'gl' %}
+                    <p>Envolta en soños e instinto, o gatiño comeza a refacerse. Fórmase unha crisálida silente, alimentada por aquilo que devorou.</p>
+                    {% else %}
+                    <p>Envuelto en sueños e instinto, el felino empieza a rehacerse. La crisálida se forma en silencio, alimentada por aquello que devoró.</p>
+                    {% endif %}
+                </div>
+            </li>
+
+            <li class="canary-phase__item">
+                <img class="canary-phase__img" loading="lazy" src="{{ url_for('static', filename='images/closedCocoon.avif') }}" alt="The Closed Cocoon">
+                <div class="canary-phase__text">
+                    <h3>{% if lang == 'en' %}The Closed Cocoon{% elif lang == 'gl' %}O Casulo Pechado{% else %}El Capullo Cerrado{% endif %}</h3>
+                    {% if lang == 'en' %}
+                    <p>The transformation is sealed. No eyes, no breath, no movement — only the slow alchemy of becoming.</p>
+                    {% elif lang == 'gl' %}
+                    <p>A transformación está selada. Sen ollos, sen alento, sen movemento — só a lenta alquimia do devir.</p>
+                    {% else %}
+                    <p>La transformación está sellada. Sin ojos, sin aliento, sin movimiento — solo la lenta alquimia del devenir.</p>
+                    {% endif %}
+                </div>
+            </li>
+
+            <li class="canary-phase__item">
+                <img class="canary-phase__img" loading="lazy" src="{{ url_for('static', filename='images/uncertainEgg.avif') }}" alt="The Uncertain Egg">
+                <div class="canary-phase__text">
+                    <h3>{% if lang == 'en' %}The Uncertain Egg{% elif lang == 'gl' %}O Ovo Incerto{% else %}El Huevo Incierto{% endif %}</h3>
+                    {% if lang == 'en' %}
+                    <p>Our satisfied cat sleeps inside the egg. But… Is it still a cat?</p>
+                    {% elif lang == 'gl' %}
+                    <p>O noso gato satisfeito dorme dentro do ovo. Pero… Segue sendo un gato?</p>
+                    {% else %}
+                    <p>Nuestro gato satisfecho duerme dentro del huevo. Pero… ¿Sigue siendo un gato?</p>
+                    {% endif %}
+                </div>
+            </li>
+
+        </ul>
+    </section>
+
+    <section class="canary-cta">
+        <a class="canary-cta__btn" href="https://opensea.io/collection/rivia-magiarin-metamorphosis" target="_blank" rel="noopener noreferrer">
+            {% if lang == 'en' %}View on OpenSea
+            {% elif lang == 'gl' %}Ver en OpenSea
+            {% else %}Ver en OpenSea{% endif %}
+        </a>
+    </section>
+
+    <section class="canary-share">
+        <p class="canary-share__label">
+            {% if lang == 'en' %}Share this collection
+            {% elif lang == 'gl' %}Comparte esta colección
+            {% else %}Comparte esta colección{% endif %}
+        </p>
+        <div class="canary-share__buttons">
+            <a class="canary-share__btn" href="https://twitter.com/intent/tweet?url=https%3A%2F%2Fwww.riviamagiarin.art%2Fcanary-feast&text=Metamorphosis+%E2%80%94+Canary+Feast+-+Rivia+Magiar%C3%ADn" target="_blank" rel="noopener noreferrer" aria-label="Compartir en X">
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="18" height="18" fill="currentColor" aria-hidden="true">
+                    <path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-4.714-6.231-5.401 6.231H2.744l7.737-8.835L1.254 2.25H8.08l4.253 5.622zm-1.161 17.52h1.833L7.084 4.126H5.117z"/>
+                </svg>
+                <span>X</span>
+            </a>
+            <a class="canary-share__btn" href="https://t.me/share/url?url=https%3A%2F%2Fwww.riviamagiarin.art%2Fcanary-feast&text=Metamorphosis+%E2%80%94+Canary+Feast+-+Rivia+Magiar%C3%ADn" target="_blank" rel="noopener noreferrer" aria-label="Compartir en Telegram">
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="18" height="18" fill="currentColor" aria-hidden="true">
+                    <path d="M11.944 0A12 12 0 0 0 0 12a12 12 0 0 0 12 12 12 12 0 0 0 12-12A12 12 0 0 0 12 0a12 12 0 0 0-.056 0zm4.962 7.224c.1-.002.321.023.465.14a.506.506 0 0 1 .171.325c.016.093.036.306.02.472-.18 1.898-.962 6.502-1.36 8.627-.168.9-.499 1.201-.82 1.23-.696.065-1.225-.46-1.9-.902-1.056-.693-1.653-1.124-2.678-1.8-1.185-.78-.417-1.21.258-1.91.177-.184 3.247-2.977 3.307-3.23.007-.032.014-.15-.056-.212s-.174-.041-.249-.024c-.106.024-1.793 1.14-5.061 3.345-.48.33-.913.49-1.302.48-.428-.008-1.252-.241-1.865-.44-.752-.245-1.349-.374-1.297-.789.027-.216.325-.437.893-.663 3.498-1.524 5.83-2.529 6.998-3.014 3.332-1.386 4.025-1.627 4.476-1.635z"/>
+                </svg>
+                <span>Telegram</span>
+            </a>
+            <a class="canary-share__btn" href="https://wa.me/?text=Metamorphosis+%E2%80%94+Canary+Feast+-+Rivia+Magiar%C3%ADn+https%3A%2F%2Fwww.riviamagiarin.art%2Fcanary-feast" target="_blank" rel="noopener noreferrer" aria-label="Compartir en WhatsApp">
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="18" height="18" fill="currentColor" aria-hidden="true">
+                    <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 0 1-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 0 1-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 0 1 2.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0 0 12.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 0 0 5.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 0 0-3.48-8.413z"/>
+                </svg>
+                <span>WhatsApp</span>
+            </a>
+            <a class="canary-share__btn" href="mailto:?subject=Metamorphosis%20%E2%80%94%20Canary%20Feast%20-%20Rivia%20Magiar%C3%ADn&body=https%3A%2F%2Fwww.riviamagiarin.art%2Fcanary-feast" aria-label="Compartir por email">
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="18" height="18" fill="currentColor" aria-hidden="true">
+                    <path d="M20 4H4c-1.1 0-2 .9-2 2v12c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 4-8 5-8-5V6l8 5 8-5v2z"/>
+                </svg>
+                <span>Email</span>
+            </a>
+        </div>
+    </section>
+
+</article>
+
+{% endblock %}

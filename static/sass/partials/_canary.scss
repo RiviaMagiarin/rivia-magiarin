@@ -1,1 +1,304 @@
 @use 'base' as *;
+
+.canary-hero {
+    position: relative;
+    width: 100%;
+    height: 100vh;
+    overflow: hidden;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    // overlay gradiente oscuro sobre la imagen
+    &::after {
+        content: '';
+        position: absolute;
+        inset: 0;
+        background: linear-gradient(
+            to bottom,
+            rgba(0, 0, 0, 0.10) 0%,
+            rgba(0, 0, 0, 0.50) 65%,
+            rgba(0, 0, 0, 0.78) 100%
+        );
+        z-index: 1;
+    }
+
+    &__image {
+        position: absolute;
+        inset: 0;
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        object-position: center top;
+        display: block;
+        z-index: 0;
+    }
+
+    &__title {
+        position: relative;
+        z-index: 2;
+        font-family: $font-title;
+        font-size: clamp(1.9rem, 5vw, 3.6rem);
+        color: $cozy-cream;
+        text-align: center;
+        letter-spacing: 0.07em;
+        text-shadow:
+            0 2px 6px rgba(0, 0, 0, 0.65),
+            0 6px 30px rgba(0, 0, 0, 0.35);
+        padding: 0 2rem;
+        margin-top: 14vh;
+    }
+}
+
+// ─── Contenedor del artículo ──────────────────────────────────────────────────
+.canary-content {
+    max-width: 860px;
+    margin: 0 auto;
+    padding: 5rem 2.5rem 6rem;
+    display: flex;
+    flex-direction: column;
+    gap: 5rem;
+}
+
+// ─── Intro ───────────────────────────────────────────────────────────────────
+.canary-intro {
+    p {
+        font-size: 1.15rem;
+        line-height: 2;
+        color: rgba($canary-cream, 0.92);
+        font-style: italic;
+        border-left: 3px solid $canary-yellow;
+        padding-left: 1.5rem;
+        max-width: 72ch;
+    }
+}
+
+// ─── Fases ───────────────────────────────────────────────────────────────────
+.canary-phase {
+
+    > h2 {
+        font-family: $font-title;
+        font-size: 1.1rem;
+        color: $canary-yellow;
+        margin-bottom: 2.5rem;
+        letter-spacing: 0.1em;
+        text-transform: uppercase;
+        padding-bottom: 0.5rem;
+        border-bottom: 1px solid rgba($canary-yellow, 0.25);
+    }
+
+    &__list {
+        list-style: none;
+        display: flex;
+        flex-direction: column;
+        gap: 1rem;
+    }
+
+    &__item {
+        display: flex;
+        align-items: flex-start;
+        gap: 1.5rem;
+        background: linear-gradient(
+            135deg,
+            rgba($canary-black, 0.55) 0%,
+            rgba($canary-red, 0.08) 100%
+        );
+        border: 1px solid rgba($canary-yellow, 0.18);
+        border-left: 3px solid $canary-yellow;
+        border-radius: 2px;
+        padding: 1.5rem 1.75rem;
+        transition: border-left-color 0.2s ease, background 0.2s ease;
+
+        &:nth-child(even) {
+            flex-direction: row-reverse;
+        }
+
+        &:hover {
+            border-left-color: $canary-red;
+            background: linear-gradient(
+                135deg,
+                rgba($canary-black, 0.65) 0%,
+                rgba($canary-red, 0.15) 100%
+            );
+        }
+
+        h3 {
+            font-family: $font-title;
+            font-size: 1.1rem;
+            color: $canary-yellow;
+            margin-bottom: 0.45rem;
+            letter-spacing: 0.01em;
+        }
+
+        p {
+            font-size: 0.95rem;
+            line-height: 1.85;
+            color: rgba($canary-cream, 0.85);
+        }
+    }
+
+    &__img {
+        width: 180px;
+        flex-shrink: 0;
+        border-radius: 2px;
+        object-fit: cover;
+        display: block;
+        opacity: 0.92;
+        transition: opacity 0.25s ease, transform 0.25s ease;
+
+        &:hover {
+            opacity: 1;
+            transform: scale(1.02);
+        }
+    }
+
+    &__text {
+        flex: 1;
+    }
+
+    &__tagline {
+        display: block;
+        font-style: italic;
+        font-size: 0.88rem;
+        color: rgba($canary-yellow, 0.65);
+        margin-bottom: 0.6rem;
+    }
+}
+
+// ─── CTA OpenSea ──────────────────────────────────────────────────────────────
+.canary-cta {
+    display: flex;
+    justify-content: center;
+    padding: 1rem 0 2rem;
+
+    &__btn {
+        display: inline-flex;
+        align-items: center;
+        padding: 1rem 3.5rem;
+        background-color: $canary-yellow;
+        color: $canary-black;
+        font-family: $font-title;
+        font-size: 1.1rem;
+        font-weight: bold;
+        letter-spacing: 0.07em;
+        text-transform: uppercase;
+        text-decoration: none;
+        border: 2px solid $canary-yellow;
+        border-radius: 2px;
+        box-shadow: 0 4px 22px rgba($canary-yellow, 0.3);
+        transition:
+            background-color 0.25s ease,
+            color 0.25s ease,
+            box-shadow 0.25s ease,
+            transform 0.15s ease;
+
+        &:hover {
+            background-color: transparent;
+            color: $canary-yellow;
+            box-shadow: 0 4px 28px rgba($canary-yellow, 0.12);
+            text-decoration: none;
+            transform: translateY(-2px);
+        }
+
+        &:active { transform: translateY(0); }
+    }
+}
+
+// ─── Compartir ────────────────────────────────────────────────────────────────
+.canary-share {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 1.25rem;
+
+    &__label {
+        font-family: $font-title;
+        font-size: 0.95rem;
+        color: rgba($canary-cream, 0.55);
+        letter-spacing: 0.05em;
+        text-transform: uppercase;
+    }
+
+    &__buttons {
+        display: flex;
+        align-items: center;
+        gap: 0.75rem;
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+
+    &__btn {
+        display: inline-flex;
+        align-items: center;
+        gap: 0.5rem;
+        padding: 0.5rem 1.1rem;
+        border: 1px solid rgba($canary-cream, 0.2);
+        border-radius: 2px;
+        color: rgba($canary-cream, 0.65);
+        font-family: $font-main;
+        font-size: 0.85rem;
+        text-decoration: none;
+        transition: border-color 0.2s ease, color 0.2s ease, background 0.2s ease;
+
+        svg { flex-shrink: 0; }
+
+        &:hover {
+            border-color: $canary-yellow;
+            color: $canary-yellow;
+            background: rgba($canary-yellow, 0.07);
+            text-decoration: none;
+        }
+    }
+}
+
+// ─── Responsive ───────────────────────────────────────────────────────────────
+@media (max-width: 768px) {
+    .canary-hero {
+        height: 60vh;
+    }
+
+    .canary-hero__title {
+        font-size: clamp(1.5rem, 6vw, 2.4rem);
+        margin-top: 10vh;
+    }
+
+    .canary-content {
+        padding: 3.5rem 1.75rem 5rem;
+        gap: 3.5rem;
+    }
+}
+
+@media (max-width: 480px) {
+    .canary-hero__title {
+        font-size: 1.4rem;
+        letter-spacing: 0.02em;
+        margin-top: 8vh;
+    }
+
+    .canary-content {
+        padding: 2.5rem 1.25rem 4rem;
+        gap: 3rem;
+    }
+
+    .canary-phase__item {
+        flex-direction: column;
+        gap: 0.75rem;
+        padding: 1.25rem;
+
+        &:nth-child(even) {
+            flex-direction: column;
+        }
+    }
+
+    .canary-phase__img {
+        width: 100%;
+        max-width: 220px;
+        align-self: center;
+    }
+
+    .canary-cta__btn {
+        width: 100%;
+        justify-content: center;
+        padding: 1rem 1.5rem;
+    }
+}
