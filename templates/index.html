@@ -124,6 +124,42 @@ Así está escrito y así es | por siempre y para siempre | HECHO ES
         </div>
 
     </article>
+    <article class="home-origin home-origin--canary">
+        <h2><a href="/canary-feast">Canary Feast</a></h2>
+
+        <div class="home-origin__row">
+            <div class="home-origin__text">
+                {% if lang == 'en' %}
+                <p>In the universe of Rivia Magiarín, some creatures are not born: they simply appear when their story decides to manifest. In 2018, upon paper and pencil, the silhouette of a cat with an enigmatic smile emerged, surrounded by feathers that betrayed an act already consummated. It was not mischief: it was destiny. The cat devoured the canary, and in that gesture its nature was sealed.</p>
+                {% elif lang == 'gl' %}
+                <p>No universo de Rivia Magiarín, algunhas criaturas non nacen: simplemente aparecen cando a súa historia decide manifestarse. En 2018, sobre papel e lapis, xurdiu a silueta dun gato de sorriso enigmático, rodeado de plumas que delataban un acto xa consumado. Non foi unha trasnada: foi destino. O gato devorou o canario, e nese xesto quedou selada a súa natureza.</p>
+                {% else %}
+                <p>En el universo de Rivia Magiarín, algunas criaturas no nacen: simplemente aparecen cuando su historia decide manifestarse. En 2018, sobre un papel y a lápiz, emergió la silueta de un gato de sonrisa enigmática, rodeado de plumas que delataban un acto ya consumado. No fue una travesura: fue destino. El gato devoró al canario, y en ese gesto quedó sellada su naturaleza.</p>
+                {% endif %}
+            </div>
+            <img class="home-origin__img"
+                 loading="lazy"
+                 src="{{ url_for('static', filename='images/theCat_2018.avif') }}"
+                 alt="Canary Feast Original on paper - 2018">
+        </div>
+
+        <div class="home-origin__row home-origin__row--reverse">
+            <div class="home-origin__text">
+                {% if lang == 'en' %}
+                <p>When in 2019 it received color and digital form, its true essence surfaced: a playful, radiant, and profoundly loving being. The heart it carries on its chest is not an ornament, but a declaration. Every one of its actions —even the most mischievous— is, ultimately, an act of love.</p>
+                {% elif lang == 'gl' %}
+                <p>Cando en 2019 recibiu cor e forma dixital, emerxeu a súa verdadeira esencia: un ser falcatruéiro, luminoso e fondamente amoroso. O corazón que leva no peito non é adorno, senón declaración. Cada un dos seus actos —mesmo os máis pícaros— é, en última instancia, un acto de amor.</p>
+                {% else %}
+                <p>Cuando en 2019 recibió color y forma digital, emergió su verdadera esencia: un ser juguetón, luminoso y profundamente amoroso. El corazón que porta en el pecho no es adorno, sino declaración. Cada uno de sus actos —incluso los más traviesos— es, en última instancia, un acto de amor.</p>
+                {% endif %}
+            </div>
+            <img class="home-origin__img"
+                 loading="lazy"
+                 src="{{ url_for('static', filename='images/theCat_2019.avif') }}"
+                 alt="Canary Feast, digitized - 2019">
+        </div>
+
+    </article>
 
 </section>
 {% endblock %}
