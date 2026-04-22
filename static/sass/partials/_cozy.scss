@@ -139,11 +139,17 @@
     }
 
     &__icon {
+        width: 100%;
+        height: 100%;
+        object-fit: contain;
+        border-radius: 6px;
+        display: block;
+    }
+
+    .cozy-pin-wrap {
         width: 180px;
         height: 180px;
-        object-fit: contain;
         flex-shrink: 0;
-        border-radius: 6px;
         align-self: flex-start;
     }
 }
@@ -194,10 +200,14 @@
         flex-direction: row-reverse;
     }
 
-    img {
-        width: 100%;
+    .cozy-pin-wrap {
         max-width: 150px;
         flex-shrink: 0;
+    }
+
+    img {
+        width: 100%;
+        display: block;
         border-radius: 12px;
         object-fit: cover;
     }
@@ -224,10 +234,14 @@
     align-items: center;
     gap: 1.75rem;
 
-    img {
-        width: 100%;
+    .cozy-pin-wrap {
         max-width: 150px;
         flex-shrink: 0;
+    }
+
+    img {
+        width: 100%;
+        display: block;
         border-radius: 12px;
         object-fit: cover;
     }
@@ -259,6 +273,84 @@
     padding: 2.5rem 3rem;
 
     p { color: rgba($cozy-cream, 0.8); }
+}
+
+// ─── Pinterest pin ────────────────────────────────────────────────────────────
+.cozy-pin-wrap {
+    position: relative;
+    display: inline-block;
+    line-height: 0;
+    margin: 0;
+}
+
+.cozy-pin-btn {
+    position: absolute;
+    top: 0.4rem;
+    right: 0.4rem;
+    width: 28px;
+    height: 28px;
+    background: rgba(#e60023, 0.88);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #fff;
+    opacity: 0;
+    transition: opacity 0.2s ease;
+    text-decoration: none;
+
+    svg { display: block; }
+}
+
+.cozy-pin-wrap:hover .cozy-pin-btn {
+    opacity: 1;
+}
+
+// ─── Compartir ────────────────────────────────────────────────────────────────
+.cozy-share {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 1.25rem;
+
+    &__label {
+        font-family: $font-title;
+        font-size: 0.95rem;
+        color: rgba($cozy-cream, 0.55);
+        letter-spacing: 0.05em;
+        text-transform: uppercase;
+    }
+
+    &__buttons {
+        display: flex;
+        align-items: center;
+        gap: 0.75rem;
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+
+    &__btn {
+        display: inline-flex;
+        align-items: center;
+        gap: 0.5rem;
+        padding: 0.5rem 1.1rem;
+        border: 1px solid rgba($cozy-cream, 0.2);
+        border-radius: 2px;
+        color: rgba($cozy-cream, 0.65);
+        font-family: $font-main;
+        font-size: 0.85rem;
+        text-decoration: none;
+        transition: border-color 0.2s ease, color 0.2s ease, background 0.2s ease;
+
+        svg { flex-shrink: 0; }
+
+        &:hover {
+            border-color: $cozy-orange;
+            color: $cozy-orange;
+            background: rgba($cozy-orange, 0.07);
+            text-decoration: none;
+        }
+    }
 }
 
 // ─── CTA OpenSea ──────────────────────────────────────────────────────────────
@@ -345,7 +437,7 @@
         flex-direction: column;
     }
 
-    .cozy-groups__item:nth-child(even) .cozy-groups__icon {
+    .cozy-groups__item:nth-child(even) .cozy-pin-wrap {
         align-self: flex-end;
     }
 
@@ -354,8 +446,9 @@
         flex-direction: column;
         align-items: center;
 
-        img {
+        .cozy-pin-wrap {
             max-width: 100%;
+            width: 100%;
         }
     }
 
@@ -363,7 +456,7 @@
         flex-direction: column;
     }
 
-    .cozy-smiles__item:nth-child(even) img {
+    .cozy-smiles__item:nth-child(even) .cozy-pin-wrap {
         align-self: flex-end;
     }
 

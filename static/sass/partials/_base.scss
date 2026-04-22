@@ -295,7 +295,34 @@ footer {
 
     @media (max-width: 480px) {
         flex-direction: column;
-        align-items: flex-start;
+        align-items: center;
         gap: 0.5rem;
+    }
+}
+
+.footer-social {
+    display: flex;
+    align-items: center;
+    gap: 1.25rem;
+    border-bottom: none;
+    padding: 0;
+    background: none;
+
+    &__link {
+        display: flex;
+        align-items: center;
+        color: rgba($color-light, 0.6);
+        text-decoration: none;
+        border-bottom: none;
+        transition: color 0.2s ease, transform 0.2s ease;
+
+        &:hover {
+            color: $color-accent;
+            transform: translateY(-2px);
+            text-decoration: none;
+            border-bottom: none;
+        }
+
+        svg { display: block; }
     }
 }

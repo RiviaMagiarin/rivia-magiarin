@@ -245,6 +245,32 @@ footer a:hover {
   }
 }
 
+.footer-social {
+  display: flex;
+  align-items: center;
+  gap: 1.25rem;
+  border-bottom: none;
+  padding: 0;
+  background: none;
+}
+.footer-social__link {
+  display: flex;
+  align-items: center;
+  color: rgba(245, 240, 232, 0.6);
+  text-decoration: none;
+  border-bottom: none;
+  transition: color 0.2s ease, transform 0.2s ease;
+}
+.footer-social__link:hover {
+  color: #c9a96e;
+  transform: translateY(-2px);
+  text-decoration: none;
+  border-bottom: none;
+}
+.footer-social__link svg {
+  display: block;
+}
+
 nav {
   display: flex;
   align-items: center;
@@ -505,12 +531,17 @@ nav .nav-lang a.active {
   color: rgba(245, 240, 232, 0.85);
 }
 .cozy-groups__icon {
-  width: 180px;
-  height: 180px;
+  width: 100%;
+  height: 100%;
   -o-object-fit: contain;
      object-fit: contain;
-  flex-shrink: 0;
   border-radius: 6px;
+  display: block;
+}
+.cozy-groups .cozy-pin-wrap {
+  width: 180px;
+  height: 180px;
+  flex-shrink: 0;
   align-self: flex-start;
 }
 
@@ -562,10 +593,13 @@ nav .nav-lang a.active {
 .cozy-smiles__item:nth-child(even) {
   flex-direction: row-reverse;
 }
-.cozy-smiles__item img {
-  width: 100%;
+.cozy-smiles__item .cozy-pin-wrap {
   max-width: 150px;
   flex-shrink: 0;
+}
+.cozy-smiles__item img {
+  width: 100%;
+  display: block;
   border-radius: 12px;
   -o-object-fit: cover;
      object-fit: cover;
@@ -590,10 +624,13 @@ nav .nav-lang a.active {
   align-items: center;
   gap: 1.75rem;
 }
-.cozy-hair__item img {
-  width: 100%;
+.cozy-hair__item .cozy-pin-wrap {
   max-width: 150px;
   flex-shrink: 0;
+}
+.cozy-hair__item img {
+  width: 100%;
+  display: block;
   border-radius: 12px;
   -o-object-fit: cover;
      object-fit: cover;
@@ -619,6 +656,80 @@ nav .nav-lang a.active {
 }
 .cozy-epilogue p {
   color: rgba(245, 240, 232, 0.8);
+}
+
+.cozy-pin-wrap {
+  position: relative;
+  display: inline-block;
+  line-height: 0;
+  margin: 0;
+}
+
+.cozy-pin-btn {
+  position: absolute;
+  top: 0.4rem;
+  right: 0.4rem;
+  width: 28px;
+  height: 28px;
+  background: rgba(230, 0, 35, 0.88);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #fff;
+  opacity: 0;
+  transition: opacity 0.2s ease;
+  text-decoration: none;
+}
+.cozy-pin-btn svg {
+  display: block;
+}
+
+.cozy-pin-wrap:hover .cozy-pin-btn {
+  opacity: 1;
+}
+
+.cozy-share {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1.25rem;
+}
+.cozy-share__label {
+  font-family: "Palatino Linotype", serif;
+  font-size: 0.95rem;
+  color: rgba(245, 240, 232, 0.55);
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+}
+.cozy-share__buttons {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+.cozy-share__btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.5rem 1.1rem;
+  border: 1px solid rgba(245, 240, 232, 0.2);
+  border-radius: 2px;
+  color: rgba(245, 240, 232, 0.65);
+  font-family: "Georgia", serif;
+  font-size: 0.85rem;
+  text-decoration: none;
+  transition: border-color 0.2s ease, color 0.2s ease, background 0.2s ease;
+}
+.cozy-share__btn svg {
+  flex-shrink: 0;
+}
+.cozy-share__btn:hover {
+  border-color: #e8834a;
+  color: #e8834a;
+  background: rgba(232, 131, 74, 0.07);
+  text-decoration: none;
 }
 
 .cozy-cta {
@@ -692,7 +803,7 @@ nav .nav-lang a.active {
   .cozy-groups__item:nth-child(even) {
     flex-direction: column;
   }
-  .cozy-groups__item:nth-child(even) .cozy-groups__icon {
+  .cozy-groups__item:nth-child(even) .cozy-pin-wrap {
     align-self: flex-end;
   }
   .cozy-smiles__item,
@@ -700,14 +811,15 @@ nav .nav-lang a.active {
     flex-direction: column;
     align-items: center;
   }
-  .cozy-smiles__item img,
-  .cozy-hair__item img {
+  .cozy-smiles__item .cozy-pin-wrap,
+  .cozy-hair__item .cozy-pin-wrap {
     max-width: 100%;
+    width: 100%;
   }
   .cozy-smiles__item:nth-child(even) {
     flex-direction: column;
   }
-  .cozy-smiles__item:nth-child(even) img {
+  .cozy-smiles__item:nth-child(even) .cozy-pin-wrap {
     align-self: flex-end;
   }
   .cozy-epilogue {
