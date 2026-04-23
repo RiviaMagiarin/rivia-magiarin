@@ -1,5 +1,6 @@
 @use 'base' as *;
 
+// ─── Hero ────────────────────────────────────────────────────────────────────
 .canary-hero {
     position: relative;
     width: 100%;
@@ -9,7 +10,6 @@
     align-items: center;
     justify-content: center;
 
-    // overlay gradiente oscuro sobre la imagen
     &::after {
         content: '';
         position: absolute;
@@ -39,7 +39,7 @@
         z-index: 2;
         font-family: $font-title;
         font-size: clamp(1.9rem, 5vw, 3.6rem);
-        color: $cozy-cream;
+        color: $canary-cream;
         text-align: center;
         letter-spacing: 0.07em;
         text-shadow:
@@ -52,7 +52,7 @@
 
 // ─── Contenedor del artículo ──────────────────────────────────────────────────
 .canary-content {
-    max-width: 860px;
+    max-width: 900px;
     margin: 0 auto;
     padding: 5rem 2.5rem 6rem;
     display: flex;
@@ -91,41 +91,37 @@
         list-style: none;
         display: flex;
         flex-direction: column;
-        gap: 1rem;
+        gap: 1.5rem;
     }
 
+    // ── Tarjeta estilo galería en papel ───────────────────────────────────────
     &__item {
         display: flex;
-        align-items: flex-start;
-        gap: 1.5rem;
-        background: linear-gradient(
-            135deg,
-            rgba($canary-black, 0.55) 0%,
-            rgba($canary-red, 0.08) 100%
-        );
-        border: 1px solid rgba($canary-yellow, 0.18);
-        border-left: 3px solid $canary-yellow;
+        align-items: stretch;
+        gap: 0;
+        background-color: #f5ead8;
         border-radius: 2px;
-        padding: 1.5rem 1.75rem;
-        transition: border-left-color 0.2s ease, background 0.2s ease;
+        overflow: hidden;
+        box-shadow:
+            0 4px 18px rgba(0, 0, 0, 0.45),
+            0 1px 4px rgba(0, 0, 0, 0.25);
+        transition: box-shadow 0.25s ease, transform 0.2s ease;
 
         &:nth-child(even) {
             flex-direction: row-reverse;
         }
 
         &:hover {
-            border-left-color: $canary-red;
-            background: linear-gradient(
-                135deg,
-                rgba($canary-black, 0.65) 0%,
-                rgba($canary-red, 0.15) 100%
-            );
+            box-shadow:
+                0 8px 32px rgba(0, 0, 0, 0.55),
+                0 2px 8px rgba(0, 0, 0, 0.3);
+            transform: translateY(-2px);
         }
 
         h3 {
             font-family: $font-title;
-            font-size: 1.1rem;
-            color: $canary-yellow;
+            font-size: 1.15rem;
+            color: $canary-red;
             margin-bottom: 0.45rem;
             letter-spacing: 0.01em;
         }
@@ -133,34 +129,45 @@
         p {
             font-size: 0.95rem;
             line-height: 1.85;
-            color: rgba($canary-cream, 0.85);
+            color: rgba($canary-black, 0.78);
         }
     }
 
+    // ── Imagen integrada sin bordes ───────────────────────────────────────────
     &__img {
-        width: 180px;
+        width: 200px;
         flex-shrink: 0;
-        border-radius: 2px;
         object-fit: cover;
         display: block;
-        opacity: 0.92;
-        transition: opacity 0.25s ease, transform 0.25s ease;
+        transition: opacity 0.25s ease;
 
         &:hover {
-            opacity: 1;
-            transform: scale(1.02);
+            opacity: 0.92;
         }
     }
 
+    // ── Texto con padding propio ──────────────────────────────────────────────
     &__text {
         flex: 1;
+        padding: 1.75rem 2rem;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        border-left: 3px solid $canary-yellow;
+
+        // En las tarjetas invertidas el borde va a la derecha
+        .canary-phase__item:nth-child(even) & {
+            border-left: none;
+            border-right: 3px solid $canary-yellow;
+        }
     }
 
+    // ── Subtítulo itálico ─────────────────────────────────────────────────────
     &__tagline {
         display: block;
         font-style: italic;
         font-size: 0.88rem;
-        color: rgba($canary-yellow, 0.65);
+        color: rgba($canary-red, 0.65);
         margin-bottom: 0.6rem;
     }
 }
@@ -280,20 +287,22 @@
         gap: 3rem;
     }
 
-    .canary-phase__item {
+    .canary-phase__item,
+    .canary-phase__item:nth-child(even) {
         flex-direction: column;
-        gap: 0.75rem;
-        padding: 1.25rem;
-
-        &:nth-child(even) {
-            flex-direction: column;
-        }
     }
 
     .canary-phase__img {
         width: 100%;
-        max-width: 220px;
-        align-self: center;
+        max-width: 100%;
+        height: 220px;
+        object-position: center top;
+    }
+
+    .canary-phase__text {
+        border-left: 3px solid $canary-yellow !important;
+        border-right: none !important;
+        padding: 1.25rem;
     }
 
     .canary-cta__btn {
