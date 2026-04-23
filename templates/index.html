@@ -161,5 +161,42 @@ Así está escrito y así es | por siempre y para siempre | HECHO ES
 
     </article>
 
+    <article class="home-origin home-origin--octopus">
+        <h2><a href="/octopus">Octopus</a></h2>
+
+        <div class="home-origin__row home-origin__row--reverse">
+            <div class="home-origin__text">
+                {% if lang == 'en' %}
+                <p>In 2023, an orange octopus tangled itself in the DNA double helix rising from the earth, claiming its place in the evolutionary scale with charisma and personality.</p>
+                {% elif lang == 'gl' %}
+                <p>En 2023, un polbo laranxa enredouse na dobre hélice do ADN que saía da terra, demostrando cal era o seu lugar na escala evolutiva, con carisma e personalidade.</p>
+                {% else %}
+                <p>En 2023, un pulpo naranja se enredó en la doble hélice del ADN que salía de la tierra, demostrando cuál era su lugar en la escala evolutiva, con carisma y personalidad.</p>
+                {% endif %}
+            </div>
+            <img class="home-origin__img"
+                 loading="lazy"
+                 src="{{ url_for('static', filename='images/octopus_2023.avif') }}"
+                 alt="Octopus - 2023">
+        </div>
+
+        <div class="home-origin__row">
+            <div class="home-origin__text">
+                {% if lang == 'en' %}
+                <p>A year later, a blue-ringed octopus (Hapalochlaena) crossed its path and, merging together, they gave birth to the ría octopus with blue rings — a fantasy made real in the art and stories universe of Rivia Magiarín.</p>
+                {% elif lang == 'gl' %}
+                <p>Un ano despois, un polbo con aneis azuis (Hapalochlaena) cruzouse no seu camiño e, fusionándose, deron orixe ao polbo da ría con aneis azuis — unha fantasía feita realidade no universo de arte e historias de Rivia Magiarín.</p>
+                {% else %}
+                <p>Un año después, un pulpo con anillos azules (Hapalochlaena) se cruzó en su camino y, fusionándose, dieron origen al pulpo de la ría con anillos azules — una fantasía hecha realidad en el universo de arte e historias de Rivia Magiarín.</p>
+                {% endif %}
+            </div>
+            <img class="home-origin__img"
+                 loading="lazy"
+                 src="{{ url_for('static', filename='images/octopus_2024.avif') }}"
+                 alt="Octopus - 2024">
+        </div>
+
+    </article>
+
 </section>
 {% endblock %}
