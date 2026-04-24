@@ -53,7 +53,10 @@ def canary_feast():
 
 @app.route('/octopus', methods=['GET'])
 def octopus():
-    return render_template('octopus.html')
+    lang = request.args.get('lang', 'en')
+    if lang not in LANGUAGES:
+        lang = 'en'
+    return render_template('octopus.html', lang=lang)
 
 @app.route('/privacy', methods=['GET'])
 def privacy():

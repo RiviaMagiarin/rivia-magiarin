@@ -1,5 +1,209 @@
 {% extends "base.html" %}
 
-{% block title %}Octopus - Rivia Magiarín{% endblock %}
+{% block title %}Octopus Collection - Rivia Magiarín{% endblock %}
 
-{% block content %}{% endblock %}
+{% block description %}Octopus Collection - Rivia Magiarín{% endblock %}
+
+{% block og_image %}{{ url_for('static', filename='images/octopusBanner.avif', _external=True) }}{% endblock %}
+
+{% block content %}
+<section class="octopus-hero">
+    <picture>
+        <source media="(max-width: 767px)" srcset="{{ url_for('static', filename='images/octopusBannerMobile.avif') }}">
+        <img class="octopus-hero__image" fetchpriority="high" src="{{ url_for('static', filename='images/octopusBanner.avif') }}" alt="Octopus Collection - Rivia Magiarín">
+    </picture>
+    <h1 class="octopus-hero__title">Octopus Collection</h1>
+</section>
+
+<article class="octopus-content">
+
+    <section class="octopus-intro">
+        {% if lang == 'en' %}
+        <p>The octopus is a perfect contradiction: boneless and deeply muscular, elegant and intelligent, capable of touching the world with a delicacy that defies its strength. Its eight tentacles move with an impossible weightlessness. It is a being that exists at the limits of what we understand as form, body, and intelligence.</p>
+        {% elif lang == 'gl' %}
+        <p>O polbo é unha contradición perfecta: sen ósos e profundamente musculado, elegante e intelixente, capaz de tocar o mundo cunha delicadeza que desafía a súa forza. Os seus oito tentáculos móvense cunha ingrávide que parece imposible. É un ser que existe nos límites do que entendemos por forma, por corpo, por intelixencia.</p>
+        {% else %}
+        <p>El pulpo es una contradicción perfecta: sin huesos y profundamente musculado, elegante e inteligente, capaz de tocar el mundo con una delicadeza que desafía su fuerza. Sus ocho tentáculos se mueven con una ingravidez que parece imposible. Es un ser que existe en los límites de lo que entendemos por forma, por cuerpo, por inteligencia.</p>
+        {% endif %}
+    </section>
+
+    <section class="octopus-guide">
+
+        <header class="octopus-guide__header">
+            {% if lang == 'en' %}
+            <h2>Field Guide to the Ocean of Rivia Magiarín</h2>
+            <p class="octopus-guide__subtitle"><em>First edition. Unofficial classification of the cephalopods documented in the illustrated waters of the Rivia Magiarín universe. The data collected here is the result of years of observation, intuition, and a reasonable amount of imagination. Any resemblance to real biology is intentional... to a point.</em></p>
+            {% elif lang == 'gl' %}
+            <h2>Guía de Campo do Océano de Rivia Magiarín</h2>
+            <p class="octopus-guide__subtitle"><em>Primeira edición. Clasificación non oficial dos cefalópodos documentados nas augas do universo ilustrado de Rivia Magiarín. Os datos aquí recollidos son o resultado de anos de observación, intuición e unha cantidade razoable de imaxinación. Calquera parecido coa bioloxía real é intencionado... ata certo punto.</em></p>
+            {% else %}
+            <h2>Guía de Campo del Océano de Rivia Magiarín</h2>
+            <p class="octopus-guide__subtitle"><em>Primera edición. Clasificación no oficial de los cefalópodos documentados en las aguas del universo ilustrado de Rivia Magiarín. Los datos aquí recogidos son el resultado de años de observación, intuición y una cantidad razonable de imaginación. Cualquier parecido con la biología real es intencionado... hasta cierto punto.</em></p>
+            {% endif %}
+        </header>
+
+        <article class="octopus-family octopus-family--bubble">
+            <img class="octopus-family__img" loading="lazy" src="{{ url_for('static', filename='images/bubblePurple.avif') }}" alt="Bubble Octopi — Purple variant">
+            <h2>Bubble Octopi <em>(Octopus socialis minimus)</em></h2>
+            {% if lang == 'en' %}
+            <p>Small, wide-eyed and sociable by nature, the Bubble Octopi prove that size has nothing to do with personality. They travel in groups, and their colour determines their temperament in ways that science has yet to fully explain.</p>
+            <p>The Blue are the most fearless of the family — afraid of nothing and no one, which, given their size, is either very brave or very unwise.</p>
+            <p>The Pink, with their impossible-to-ignore reflective colour, thrive on attention. On the ocean floor, they are the show.</p>
+            <p>The Purple — a purple that leans toward deep blue — are the shyest. They hide among rocks, bury themselves when possible, though some claim it is a predatory strategy. They neither confirm nor deny.</p>
+            <p>The Temptation, a red-leaning pink, are the most territorial and aggressive of the family. They protect what is theirs with the determination of an alpha lobisome. They dislike solitude, but their neighbours must keep their distance.</p>
+            <p>Finally, the Violet — a violet that grazes pink — are the most easily frightened. They move as one, like Fuenteovejuna, always watching each other's backs. Together they are invincible. Alone, they prefer not to find out.</p>
+            {% elif lang == 'gl' %}
+            <p>Pequenos, de ollos saltóns e carácter sociable, os Bubble Octopi son a proba de que o tamaño non define a personalidade. Van en grupo por natureza, e segundo a súa cor, os seus temperamentos varían de forma notable.</p>
+            <p>Os Blue son os máis confiados da familia — non lle temen a nada nin a ninguén, o cal, dado o seu tamaño, é ou moi valente ou moi imprudente.</p>
+            <p>Os Pink, con esa cor reflectante imposible de ignorar, adoran o protagonismo. No fondo do mar, son eles o espectáculo.</p>
+            <p>Os Purple — dun púrpura que tira ao azul profundo — son os máis tímidos. Escóndense entre as rochas, énterranse se poden, aínda que hai quen sostén que é unha estratexia depredadora. Eles non confirman nin desminten.</p>
+            <p>Os Temptation, dun rosa que tira ao vermello, son os máis territoriais e agresivos da familia. Protexen o seu coa determinación dun lobisome alfa. Non lles gusta estar sós, pero os seus veciños deben gardar as distancias.</p>
+            <p>E finalmente os Violet — dun violeta que roza o rosa — son os máis asustadizos. Van todos a unha, coma en Fuenteovejuna, protexéndose as costas mutuamente. Xuntos son invencibles. Sós, prefiren non comprobalo.</p>
+            {% else %}
+            <p>Pequeños, de ojos saltones y carácter sociable, los Bubble Octopi son la prueba de que el tamaño no define la personalidad. Van en grupo por naturaleza, y según su color, sus temperamentos varían de forma notable.</p>
+            <p>Los Blue son los más confiados de la familia — no le temen a nada ni a nadie, lo cual, dado su tamaño, es o muy valiente o muy imprudente.</p>
+            <p>Los Pink, con ese color reflectante imposible de ignorar, adoran el protagonismo. En el fondo del mar, son ellos el espectáculo.</p>
+            <p>Los Purple — de un púrpura que tira al azul profundo — son los más tímidos. Se esconden entre las rocas, se entierran si pueden, aunque hay quien sostiene que es una estrategia depredadora. Ellos no confirman ni desmienten.</p>
+            <p>Los Temptation, de un rosa que tira al rojo, son los más territoriales y agresivos de la familia. Protegen lo suyo con la determinación de un lobisome alfa. No les gusta estar solos, pero sus vecinos deben guardar las distancias.</p>
+            <p>Y finalmente los Violet — de un violeta que roza el rosa — son los más asustadizos. Van todos a una, como en Fuenteovejuna, protegiéndose las espaldas mutuamente. Juntos son invencibles. Solos, prefieren no comprobarlo.</p>
+            {% endif %}
+        </article>
+
+        <article class="octopus-family">
+            <img class="octopus-family__img" loading="lazy" src="{{ url_for('static', filename='images/flareGreen.avif') }}" alt="Flare Octopus — Green variant">
+            <h2>Flare Octopus <em>(Octopus solitarius venomicus)</em></h2>
+            {% if lang == 'en' %}
+            <p>Solitary by nature, Flare Octopus only gather during mating season. Their neon-coloured suckers are not an aesthetic choice — they are a deadly trap for small fish who, as everyone knows, cannot resist shiny things. Born predators, with one notable exception: females are extraordinarily gentle and affectionate with their paralarvae. Motherhood changes everything.</p>
+            <p>The Red are hostile and violent. Observe them from a distance — they are not particularly large, but their self-perception is that of a kraken. Do not argue with them.</p>
+            <p>The Amber, despite their warm and seemingly harmless tone, release an irritating substance in their ink when frightened. The Red warn with their colour. These do not warn. Best keep your distance.</p>
+            <p>The Brown are masters of camouflage among the rocks, showing only their vivid tentacles. Once they catch their prey — like pythons — they do not let go. Ever.</p>
+            <p>The Fluted, with their striated skin, blend best with the sandy ocean floor. Distrustful and aggressive, they possess a powerful parrot-like beak that tears without remorse anything that falls into their muscular tentacles. There is no second chance.</p>
+            <p>The Green and Purple are beautiful. They are also as venomous as a black widow bite. Perhaps that is why they approach any animal — humans included — without the slightest hesitation. Particularly the Green. The Purple are somewhat more reserved, which does not make them any less dangerous.</p>
+            <p>And finally the Orange, of immutable and contemplative character. Not territorial, not violent... but let us not be fooled. They only attack when hungry. The problem is they are always hungry.</p>
+            {% elif lang == 'gl' %}
+            <p>Solitarios por natureza, os Flare Octopus só se reúnen en época de apareamento. As súas ventosas de cores neón non son un capricho estético — son unha trampa mortal para os peixiños que, como todo o mundo sabe, non poden resistir as cousiñas brillantes. Depredadores natos, aínda que cunha excepción notable: as femias son extraordinariamente doces e cariñosas coas súas paralarvas. A maternidade cambia todo.</p>
+            <p>Os Red son ariscos e violentos. Obsérvaos desde a distancia — o seu tamaño non é moi grande, pero a súa percepción de si mesmos é a dun kraken. Non lles leves a contraria.</p>
+            <p>Os Amber, pese ao seu ton cálido e aparentemente inofensivo, soltan unha substancia irritante na súa tinta cando se asustan. Os Red advirten coa súa cor. Estes non avisan. Mellor non achegarse.</p>
+            <p>Os Brown son mestres do camuflaxe entre as rochas, deixando á vista só os seus vistosos tentáculos. Unha vez que atrapan á súa presa, igual que as pitóns, non a soltan. Nunca.</p>
+            <p>Os Fluted, de pel estriada, son os que mellor se confunden coa area do fondo. Desconfiados e agresivos, posúen un forte peteiro de loro que desgarra sen ningún remordimento todo aquilo que cae nos seus musculados tentáculos. Non hai segunda oportunidade.</p>
+            <p>Os Green e os Purple son fermosos. Tamén son tan velenos coma a picadura da viúva negra. Quizais por iso se achegan a calquera animal — incluído o humano — sen ningún pudor. Particularmente os Green. Os Purple son algo máis recatados, o cal non os fai menos perigosos.</p>
+            <p>E finalmente os Orange, de carácter inmutable e contemplativo. Non son territoriais, non son violentos... pero non nos deixemos enganar. Só atacan cando teñen fame. O problema é que sempre teñen fame.</p>
+            {% else %}
+            <p>Solitarios por naturaleza, los Flare Octopus solo se reúnen en época de apareamiento. Sus ventosas de colores neón no son un capricho estético — son una trampa mortal para los pececillos que, como todo el mundo sabe, no pueden resistir las cositas brillantes. Depredadores natos, aunque con una excepción notable: las hembras son extraordinariamente dulces y cariñosas con sus paralarvas. La maternidad los cambia todo.</p>
+            <p>Los Red son ariscos y violentos. Obsérvalos desde la distancia — su tamaño no es muy grande, pero su percepción de sí mismos es la de un kraken. No les lleves la contraria.</p>
+            <p>Los Amber, pese a su tono cálido y aparentemente inofensivo, sueltan una sustancia irritante en su tinta cuando se asustan. Los Red advierten con su color. Estos no avisan. Mejor no acercarse.</p>
+            <p>Los Brown son maestros del camuflaje entre las rocas, dejando a la vista solo sus vistosos tentáculos. Una vez que atrapan a su presa, al igual que las pitones, no la sueltan. Nunca.</p>
+            <p>Los Fluted, de piel estriada, son los que mejor se confunden con la arena del fondo. Desconfiados y agresivos, poseen un fuerte pico de loro que desgarra sin ningún remordimiento todo aquello que cae en sus musculados tentáculos. No hay segunda oportunidad.</p>
+            <p>Los Green y los Purple son hermosos. También son venenos tan potentes como la picadura de la viuda negra. Quizás por eso se acercan a cualquier animal — incluido el humano — sin ningún pudor. Particularmente los Green. Los Purple son algo más recatados, lo cual no los hace menos peligrosos.</p>
+            <p>Y finalmente los Orange, de carácter inmutable y contemplativo. No son territoriales, no son violentos... pero no nos dejemos engañar. Solo atacan cuando tienen hambre. El problema es que siempre tienen hambre.</p>
+            {% endif %}
+        </article>
+
+        <article class="octopus-family octopus-family--ghost">
+            <img class="octopus-family__img" loading="lazy" src="{{ url_for('static', filename='images/ghostPearl.avif') }}" alt="Ghost Octopus — Pearl variant">
+            <h2>Ghost Octopus <em>(Octopus abyssalis spectralis)</em></h2>
+            {% if lang == 'en' %}
+            <p>Almost transparent, fragile in appearance and extraordinarily resilient in reality, the Ghost Octopus inhabit the abyssal zones where krakens roam freely. They are not aggressive — they do not need to be. They have found something better than violence: survival through adaptation.</p>
+            <p>The White are the most transparent of all. Shy and discreet, they attach themselves to great krakens much as cleaner wrasse fish attach to sharks. With their fine tentacles and powerful suckers they clean them, feed on their waste, and in return receive the best protection the ocean has to offer. A fair deal.</p>
+            <p>The Blue, delicate and sky-coloured, seem to have arrived from another dimension. Their tiny black eyes are perfectly adapted to hunting the small fish of the abyssal depths. Watching them swim is like seeing a fragment of sky lost in the darkness.</p>
+            <p>The Green are the only Ghost Octopus that venture beyond the trenches. Curious and exploratory, they camouflage themselves among the pale deep-sea algae, but their wandering instinct takes them further than any of their kind.</p>
+            <p>The Pink inhabit volcanic trenches. They love the warmth, eat small hot rocks, and the light they emit attracts larvae and crustaceans from the depths like light attracts moths. Nobody knows exactly how they survive. They do not explain themselves either.</p>
+            <p>And finally the Pearl — small, delicate, moving like still water. They slip inside oysters and blend with their pearls, feeding on them and acquiring their characteristic nacreous tone. They are the hardest to find. And the hardest to forget.</p>
+            {% elif lang == 'gl' %}
+            <p>Case transparentes, fráxiles en aparencia e extraordinariamente resistentes en realidade, os Ghost Octopus habitan as zonas abisais onde os krakens campan ás súas anchas. Non son agresivos — non necesitan selo. Atoparon algo mellor que a violencia: a supervivencia por adaptación.</p>
+            <p>Os White son os máis transparentes de todos. Tímidos e discretos, adhírense aos grandes krakens como o peixe lábrido limpador se adhire aos tiburóns. Cos seus finos tentáculos e potentes ventosas límpanos, aliméntanse dos seus desechos e a cambio reciben a mellor protección do océano. Un trato xusto.</p>
+            <p>Os Blue, delicados e celestes, parecen chegados doutra dimensión. Os seus olliños negros están perfectamente adaptados para cazar os pequenos peixiños dos fondos abisais. Velos nadar é coma ver un fragmento de ceo perdido na escuridade.</p>
+            <p>Os Green son os únicos Ghost Octopus que se aventuran fóra das fosas. Curiosos e exploradores, camuflanse entre as algas branquecinas das profundidades, pero o seu instinto viaxeiro lévaos máis lonxe que a calquera dos seus congéneres.</p>
+            <p>Os Pink habitan as fosas volcánicas. Encántalles o calorciño, comen pequenas rochas quentes e a luz que emiten atrae larvas e crustáceos do fondo coma a luz atrae ás bolboretas nocturnas. Ninguén sabe exactamente como sobreviven. Eles tampouco o explican.</p>
+            <p>E finalmente os Pearl — pequenos, delicados, de movementos suaves coma a auga quieta. Introdúcense nas ostras e confúndense coas súas perlas, das que se alimentan e das que adquiren o seu ton nacarado característico. Son os máis difíciles de atopar. E os máis difíciles de esquecer.</p>
+            {% else %}
+            <p>Casi transparentes, frágiles en apariencia y extraordinariamente resistentes en realidad, los Ghost Octopus habitan las zonas abisales donde los krakens campan a sus anchas. No son agresivos — no necesitan serlo. Han encontrado algo mejor que la violencia: la supervivencia por adaptación.</p>
+            <p>Los White son los más transparentes de todos. Tímidos y discretos, se adhieren a los grandes krakens como el pez lábrido limpiador se adhiere a los tiburones. Con sus finos tentáculos y potentes ventosas los limpian, se alimentan de sus desechos y a cambio reciben la mejor protección del océano. Un trato justo.</p>
+            <p>Los Blue, delicados y celestes, parecen llegados de otra dimensión. Sus ojillos negros están perfectamente adaptados para cazar los pequeños pececillos de los fondos abisales. Verlos nadar es como ver un fragmento de cielo perdido en la oscuridad.</p>
+            <p>Los Green son los únicos Ghost Octopus que se aventuran fuera de las fosas. Curiosos y exploradores, se camuflan entre las algas blanquecinas de las profundidades, pero su instinto viajero los lleva más lejos que a cualquiera de sus congéneres.</p>
+            <p>Los Pink habitan las fosas volcánicas. Les encanta el calorcito, comen pequeñas rocas calientes y la luz que emiten atrae larvas y crustáceos del fondo como la luz atrae a las polillas. Nadie sabe exactamente cómo sobreviven. Ellos tampoco lo explican.</p>
+            <p>Y finalmente los Pearl — pequeños, delicados, de movimientos suaves como el agua quieta. Se introducen en las ostras y se confunden con sus perlas, de las que se alimentan y de las que adquieren su tono nacarado característico. Son los más difíciles de encontrar. Y los más difíciles de olvidar.</p>
+            {% endif %}
+        </article>
+
+        <article class="octopus-family">
+            <img class="octopus-family__img" loading="lazy" src="{{ url_for('static', filename='images/haloDenim.avif') }}" alt="Halo Octopus — Denim variant">
+            <h2>Halo Octopus <em>(Octopus tropicalis halogenus)</em></h2>
+            {% if lang == 'en' %}
+            <p>Striking, strange, almost extraterrestrial in appearance, the Halo Octopus are medium-sized and inhabit the ocean floors of warm tropical waters. Despite their warning-like appearance — like so many animals that have evolved to look dangerous without being so — they are calm creatures. Their best-kept secret: they are completely immune to the venom of jellyfish and anemones, among which they live and travel with total impunity.</p>
+            <p>The Beige is blind. It navigates exclusively through the touch of its tentacles and an extraordinarily sensitive statocyst — the finest of all known cephalopods. It lives beneath coral and anemone banks, where darkness is not an obstacle but its natural habitat.</p>
+            <p>The Blue, splendidly coloured and wide-eyed, is not exactly blind, but its eyesight leaves much to be desired. It shares its habitat with the Beige, though it prefers to settle among the anemones, where its colour makes it the most elegant neighbour in the area.</p>
+            <p>The Denim, faded blue like worn fabric, is the great traveller of the family. It migrates with jellyfish without caring where they take it, though its survival instinct is strong enough to keep it from ever reaching the shores. Adventurous, but not reckless.</p>
+            <p>The Green prefers shallow, algae-rich seas near tropical coasts where crabs are plentiful. Its appearance causes a visceral reaction in the humans who encounter it, which is a tragedy — because the Green Halo Octopus is endangered precisely because of this.</p>
+            <p>The Pink, ethereal and majestic, swims through the open ocean well away from shore. Perhaps it has learned from the experience of its Green cousins. Or perhaps it simply prefers the solitude of the open sea. Nobody has asked.</p>
+            <p>And the Purple, the smallest of the family but no less imposing for it. They live in the natural breakwaters of tropical coasts, right where the sea crashes with full force. They are extraordinarily strong. They have to be.</p>
+            {% elif lang == 'gl' %}
+            <p>Vistosos, estraños, de aspecto case extraterrestre, os Halo Octopus son de tamaño medio e habitan os fondos oceánicos de augas cálidas e tropicais. Pese á súa aparencia de advertencia — como tantos animais que evolucionaron para parecer perigosos sen selo — son criaturas tranquilas. O seu segredo mellor gardado: son completamente inmunes ao veleno das medusas e as anémonas, entre as que viven e viaxan con total impunidade.</p>
+            <p>O Beige é cego. Oriéntase exclusivamente a través do tacto dos seus tentáculos e dun estatocisto extraordinariamente sensible — o máis fino de todos os cefalópodos coñecidos. Vive baixo os bancos de coral e anémonas, onde a escuridade non é un obstáculo senón o seu hábitat natural.</p>
+            <p>O Blue, de cores espléndidas e ollos saltóns, non é exactamente cego, pero a súa vista deixa bastante que desexar. Comparte hábitat co Beige, aínda que prefire instalarse entre as anémonas, onde a súa cor o converte no veciño máis elegante do barrio.</p>
+            <p>O Denim, dun azul desgastado coma tea vella, é o gran viaxeiro da familia. Migra coas medusas sen importarlle a onde o leven, aínda que o seu instinto de conservación é suficientemente forte como para non chegar nunca ás praias. Aventureiro, pero non imprudente.</p>
+            <p>O Green prefire mares pouco profundos e ricos en algas, preto das costas tropicais onde os cangrexos abundan. O seu aspecto causa unha reacción visceral nos humanos que o atopan, o cal é unha traxedia — porque o Green Halo Octopus está en perigo de extinción precisamente por iso.</p>
+            <p>O Pink, etéreo e maxestuoso, nada polo océano aberto ben afastado das costas. Quizais aprendeu da experiencia dos seus congéneres Green. Ou quizais simplemente prefire a soidade do mar aberto. Ninguén llo preguntou.</p>
+            <p>E os Purple, os máis pequenos da familia pero non por iso os menos impoñentes. Viven nos rompeolas naturais das costas tropicais, xusto onde o mar estala con toda a súa forza. Son extraordinariamente fortes. Teñen que selo.</p>
+            {% else %}
+            <p>Vistosos, extraños, de aspecto casi extraterrestre, los Halo Octopus son de tamaño medio y habitan los fondos oceánicos de aguas cálidas y tropicales. Pese a su apariencia de advertencia — como tantos animales que han evolucionado para parecer peligrosos sin serlo — son criaturas tranquilas. Su secreto mejor guardado: son completamente inmunes al veneno de las medusas y las anémonas, entre las que viven y viajan con total impunidad.</p>
+            <p>El Beige es ciego. Se orienta exclusivamente a través del tacto de sus tentáculos y de un estatocisto extraordinariamente sensible — el más fino de todos los cefalópodos conocidos. Vive bajo los bancos de coral y anémonas, donde la oscuridad no es un obstáculo sino su hábitat natural.</p>
+            <p>El Blue, de colores espléndidos y ojos saltones, no es exactamente ciego, pero su vista deja bastante que desear. Comparte hábitat con el Beige, aunque prefiere instalarse entre las anémonas, donde su color lo convierte en el vecino más elegante del barrio.</p>
+            <p>El Denim, de un azul desgastado como tela vieja, es el gran viajero de la familia. Migra con las medusas sin importarle a dónde lo lleven, aunque su instinto de conservación es suficientemente fuerte como para no llegar nunca a las playas. Aventurero, pero no imprudente.</p>
+            <p>El Green prefiere mares poco profundos y ricos en algas, cerca de las costas tropicales donde los cangrejos abundan. Su aspecto causa una reacción visceral en los humanos que lo encuentran, lo cual es una tragedia — porque el Green Halo Octopus está en peligro de extinción precisamente por eso.</p>
+            <p>El Pink, etéreo y majestuoso, nada por el océano abierto bien alejado de las costas. Quizás ha aprendido de la experiencia de sus congéneres Green. O quizás simplemente prefiere la soledad del mar abierto. Nadie se lo ha preguntado.</p>
+            <p>Y los Purple, los más pequeños de la familia pero no por ello los menos imponentes. Viven en los rompeolas naturales de las costas tropicales, justo donde el mar estalla con toda su fuerza. Son extraordinariamente fuertes. Tienen que serlo.</p>
+            {% endif %}
+        </article>
+
+        <article class="octopus-family octopus-family--solar">
+            <img class="octopus-family__img" loading="lazy" src="{{ url_for('static', filename='images/neoringFlamboyant.avif') }}" alt="Neoring Flamboyant Octopus">
+            <h2>Solar Octopus &amp; Neoring Octopus <em>(Octopus ria atlanticus &amp; Octopus ria hapalochlaena)</em></h2>
+            {% if lang == 'en' %}
+            <p>First cousins. The Solar is the ría octopus par excellence — the original, the authentic, the one that started it all. The Neoring is its evolution: the cross between the Solar and the Hapalochlaena, the real blue-ringed octopus. Same character, same elegance, but with neon rings that demand to be noticed. As with all the others, their colour defines who they are.</p>
+            <p>The Sunflare — Solar and its Neoring counterpart, the Garnet — burn like a red-orange fire. In this family, males and females are not equal: males display the most intense and brilliant tone; females, on the other hand, fade upon reaching maturity. Which means nothing, because as everyone knows, females do not need to justify their existence. The Garnet share this character and add beautiful blue neon rings. They are found slightly further from shore — they are somewhat larger, and equally majestic.</p>
+            <p>The Basil — a neon green that seems impossible — inhabit the cold Atlantic waters among rocky beds. Both Solar and Neoring are large and share the same habitat. They are a fantasy made real.</p>
+            <div class="octopus-family__blue-row">
+                <img class="octopus-family__img--inline" loading="lazy" src="{{ url_for('static', filename='images/solarBlue.avif') }}" alt="Solar Blue Octopus">
+                <p>The Blue are wonderful. They move with the delicacy of underwater dancers, both Solar and Neoring, gliding through the ice of the North Atlantic as if walking on a soft carpet. Their only predator is the orca — which, being highly intelligent, rarely eats them. The Blue do not reproduce often and their paralarvae have the highest mortality rate in the entire collection. They are the most fragile. And the most extraordinary.</p>
+            </div>
+            <p>And finally the Flamboyant — the largest, the southernmost, the most hunted. Solar Flamboyant can reach the size of a kraken if they live long enough, inhabiting the deep waters of the southern hemisphere. Neoring Flamboyant are more active during mating season — they need to be, as their natural predators are leopard seals and elephant seals, who have absolutely no qualms about eating them. Their reproductive cycles are therefore shorter and their paralarvae develop faster. Both are hunted relentlessly for their ink, a rich magenta colour, highly prized for reasons this field guide prefers not to specify.</p>
+            <p><em>Author's note: Everything above is completely made up. Any resemblance to real biology is intentional to a point — and accidental in everything else. The krakens, however, are real. Do not doubt it.</em></p>
+            {% elif lang == 'gl' %}
+            <p>Primos irmáns. O Solar é o polbo da ría por excelencia — o orixinal, o auténtico, o que inspirou todo. O Neoring é a súa evolución: o cruce entre o Solar e o Hapalochlaena, o polbo de aneis azuis real. Mesmo carácter, mesma elegancia, pero con aneis de neón que non admiten ignorancia. Como todos os demais, a súa cor define quen son.</p>
+            <p>Os Sunflare — Solar e o seu homónimo Neoring Garnet — arden coma un incendio vermello alaranxado. Nesta familia, machos e femias non son iguais: os machos lucen o ton máis potente e brillante; as femias, en cambio, apáganse ao alcanzar a madurez. O cal non significa nada, porque como todo o mundo sabe, as femias non necesitan xustificar a súa existencia. Os Garnet comparten este carácter e engaden uns preciosos aneis de neón azul. Atópanselles un pouco máis afastados da costa — son algo máis grandes, e igualmente maxestuosos.</p>
+            <p>Os Basil — dun verde neón que parece imposible — habitan as frías augas atlánticas entre fondos rochosos. Tanto os Solar como os Neoring son de gran tamaño e comparten hábitat. Son unha fantasía feita realidade.</p>
+            <div class="octopus-family__blue-row">
+                <img class="octopus-family__img--inline" loading="lazy" src="{{ url_for('static', filename='images/solarBlue.avif') }}" alt="Solar Blue Octopus">
+                <p>Os Blue son marabillosos. Móvense cunha delicadeza de bailaríns baixo a auga, tanto os Solar como os Neoring, esvaéndose entre os xeos do Atlántico norte coma quen camiña sobre unha alfombra mole. O seu único depredador é a orca — que, sendo tan intelixente, raramente se os come. Os Blue non se reproducen con frecuencia e as súas paralarvas teñen a maior mortalidade de toda a colección. Son os máis fráxiles. E os máis extraordinarios.</p>
+            </div>
+            <p>E finalmente os Flamboyant — os máis grandes, os máis ao sur, os máis perseguidos. Os Solar Flamboyant poden alcanzar o tamaño dun kraken se viven o suficiente, habitando as profundidades do hemisferio sur. Os Neoring Flamboyant son máis activos en época de apareamento — necesítano, porque os seus depredadores naturais son as focas leopardo e os elefantes mariños, que non teñen ningún escrúpulo á hora de comelos. Por iso os seus ciclos reprodutivos son máis curtos e as súas paralarvas desenvólvense antes. Tanto uns como os outros son cazados sen trégua pola súa tinta, dun rico cor maxenta, moi valorada por razóns que esta guía de campo prefire non especificar.</p>
+            <p><em>Nota do autor: Todo o anterior está completamente inventado. Calquera parecido coa bioloxía real é intencionado ata certo punto — e accidental en todo o demais. Os krakens, con todo, existen. Non o dubides.</em></p>
+            {% else %}
+            <p>Primos hermanos. El Solar es el pulpo de la ría por excelencia — el original, el auténtico, el que inspiró todo. El Neoring es su evolución: el cruce entre el Solar y el Hapalochlaena, el pulpo de anillos azules reales. Mismo carácter, misma elegancia, pero con anillos de neón que no admiten ignorancia. Como todos los demás, su color define quiénes son.</p>
+            <p>Los Sunflare — Solar y su homónimo Neoring Garnet — arden como un incendio rojo anaranjado. En esta familia, machos y hembras no son iguales: los machos lucen el tono más potente y brillante; las hembras, en cambio, se apagan al alcanzar la madurez. Lo cual no significa nada, porque como todo el mundo sabe, las hembras no necesitan justificar su existencia. Los Garnet comparten este carácter y añaden unos preciosos anillos de neón azul. Se los encuentra un poco más alejados de la costa — son algo más grandes, e igualmente majestuosos.</p>
+            <p>Los Basil — de un verde neón que parece imposible — habitan las frías aguas atlánticas entre fondos rocosos. Tanto los Solar como los Neoring son de gran tamaño y comparten hábitat. Son una fantasía hecha realidad.</p>
+            <div class="octopus-family__blue-row">
+                <img class="octopus-family__img--inline" loading="lazy" src="{{ url_for('static', filename='images/solarBlue.avif') }}" alt="Solar Blue Octopus">
+                <p>Los Blue son maravillosos. Se mueven con una delicadeza de bailarines bajo el agua, tanto los Solar como los Neoring, deslizándose entre los hielos del Atlántico norte como quien camina sobre una alfombra mullida. Su único depredador es la orca — que, siendo tan inteligente, raramente se los come. Los Blue no se reproducen con frecuencia y sus paralarvas tienen la mayor mortalidad de toda la colección. Son los más frágiles. Y los más extraordinarios.</p>
+            </div>
+            <p>Y finalmente los Flamboyant — los más grandes, los más al sur, los más perseguidos. Los Solar Flamboyant pueden alcanzar el tamaño de un kraken si viven lo suficiente, habitando las profundidades del hemisferio sur. Los Neoring Flamboyant son más activos en época de apareamiento — necesitan serlo, porque sus depredadores naturales son las focas leopardo y los elefantes marinos, que no tienen ningún escrúpulo a la hora de comérselos. Por eso sus ciclos reproductivos son más cortos y sus paralarvas se desarrollan antes. Tanto unos como otros son cazados sin tregua por su tinta, de un rico color magenta, muy valorada por razones que este campo prefiere no especificar.</p>
+            <p><em>Nota del autor: Todo lo anterior es completamente inventado. Cualquier parecido con la biología real es intencionado hasta cierto punto — y accidental en todo lo demás. Los krakens, sin embargo, existen. No lo dudes.</em></p>
+            {% endif %}
+        </article>
+
+    </section>
+
+    <section class="octopus-disclaimer">
+        {% if lang == 'en' %}
+        <p><em>All of the above is entirely the fruit of the Rivia Magiarín universe of art and stories, invented in an afternoon and long nights of cephalopod-inspired dreams. Real biology was consulted, selectively ignored and reinterpreted with complete artistic freedom. The krakens, however, are real. Do not doubt it.</em></p>
+        {% elif lang == 'gl' %}
+        <p><em>Todo o anterior é completamente froito do universo de arte e historias de Rivia Magiarín, inventado nunha tarde e longas noites de soños de inspiración cefalópoda. A bioloxía real foi consultada, ignorada selectivamente e reinterpretada con total liberdade artística. Os krakens, con todo, existen. Non o dubides.</em></p>
+        {% else %}
+        <p><em>Todo lo anterior es completamente fruto del universo de arte e historias de Rivia Magiarín, inventado en una tarde y largas noches de sueños de inspiración cefalópoda. La biología real ha sido consultada, ignorada selectivamente y reinterpretada con total libertad artística. Los krakens, sin embargo, existen. No lo dudes.</em></p>
+        {% endif %}
+    </section>
+
+</article>
+
+{% endblock %}

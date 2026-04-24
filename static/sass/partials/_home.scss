@@ -144,6 +144,11 @@
         h2, h2 a { color: $octopus-turquoise; }
         h2 a:hover { color: lighten($octopus-turquoise, 10%); }
 
+        .home-origin__img {
+            object-fit: cover;
+            object-position: center center;
+        }
+
         background: linear-gradient(
             135deg,
             rgba($octopus-blue, 0.3) 0%,
