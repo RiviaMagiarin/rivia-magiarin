@@ -1239,8 +1239,8 @@ nav .nav-lang a.active {
 }
 
 .octopus-family--bubble .octopus-family__img {
-  -o-object-position: center 40%;
-     object-position: center 40%;
+  -o-object-position: center 60%;
+     object-position: center 60%;
 }
 
 .octopus-family--ghost .octopus-family__img {
@@ -1265,6 +1265,82 @@ nav .nav-lang a.active {
   color: rgba(242, 232, 213, 0.5);
   max-width: 72ch;
   font-style: italic;
+}
+
+.octopus-cta {
+  display: flex;
+  justify-content: center;
+  padding: 1rem 0 2rem;
+}
+.octopus-cta__btn {
+  display: inline-flex;
+  align-items: center;
+  padding: 1rem 3.5rem;
+  background-color: #48a999;
+  color: #1a1a2e;
+  font-family: "Palatino Linotype", serif;
+  font-size: 1.1rem;
+  font-weight: bold;
+  letter-spacing: 0.07em;
+  text-transform: uppercase;
+  text-decoration: none;
+  border: 2px solid #48a999;
+  border-radius: 2px;
+  box-shadow: 0 4px 22px rgba(72, 169, 153, 0.3);
+  transition: background-color 0.25s ease, color 0.25s ease, box-shadow 0.25s ease, transform 0.15s ease;
+}
+.octopus-cta__btn:hover {
+  background-color: transparent;
+  color: #48a999;
+  box-shadow: 0 4px 28px rgba(72, 169, 153, 0.12);
+  text-decoration: none;
+  transform: translateY(-2px);
+}
+.octopus-cta__btn:active {
+  transform: translateY(0);
+}
+
+.octopus-share {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1.25rem;
+}
+.octopus-share__label {
+  font-family: "Palatino Linotype", serif;
+  font-size: 0.95rem;
+  color: rgba(242, 232, 213, 0.55);
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+}
+.octopus-share__buttons {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+.octopus-share__btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.5rem 1.1rem;
+  border: 1px solid rgba(242, 232, 213, 0.2);
+  border-radius: 2px;
+  color: rgba(242, 232, 213, 0.65);
+  font-family: "Georgia", serif;
+  font-size: 0.85rem;
+  text-decoration: none;
+  transition: border-color 0.2s ease, color 0.2s ease, background 0.2s ease;
+}
+.octopus-share__btn svg {
+  flex-shrink: 0;
+}
+.octopus-share__btn:hover {
+  border-color: #48a999;
+  color: #48a999;
+  background: rgba(72, 169, 153, 0.07);
+  text-decoration: none;
 }
 
 @media (max-width: 768px) {
@@ -1303,6 +1379,11 @@ nav .nav-lang a.active {
   .octopus-content {
     padding: 2.5rem 1.25rem 4rem;
     gap: 3rem;
+  }
+  .octopus-cta__btn {
+    width: 100%;
+    justify-content: center;
+    padding: 1rem 1.5rem;
   }
 }
 .home-origins {

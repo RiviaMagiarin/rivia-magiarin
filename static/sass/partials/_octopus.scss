@@ -180,7 +180,7 @@
 
 // ─── Variantes de imagen por familia ─────────────────────────────────────────
 .octopus-family--bubble .octopus-family__img {
-    object-position: center 40%;
+    object-position: center 60%;
 }
 
 .octopus-family--ghost .octopus-family__img {
@@ -204,6 +204,92 @@
         color: rgba($octopus-sand, 0.5);
         max-width: 72ch;
         font-style: italic;
+    }
+}
+
+// ─── CTA OpenSea ──────────────────────────────────────────────────────────────
+.octopus-cta {
+    display: flex;
+    justify-content: center;
+    padding: 1rem 0 2rem;
+
+    &__btn {
+        display: inline-flex;
+        align-items: center;
+        padding: 1rem 3.5rem;
+        background-color: $octopus-turquoise;
+        color: $color-dark;
+        font-family: $font-title;
+        font-size: 1.1rem;
+        font-weight: bold;
+        letter-spacing: 0.07em;
+        text-transform: uppercase;
+        text-decoration: none;
+        border: 2px solid $octopus-turquoise;
+        border-radius: 2px;
+        box-shadow: 0 4px 22px rgba($octopus-turquoise, 0.3);
+        transition:
+            background-color 0.25s ease,
+            color 0.25s ease,
+            box-shadow 0.25s ease,
+            transform 0.15s ease;
+
+        &:hover {
+            background-color: transparent;
+            color: $octopus-turquoise;
+            box-shadow: 0 4px 28px rgba($octopus-turquoise, 0.12);
+            text-decoration: none;
+            transform: translateY(-2px);
+        }
+
+        &:active { transform: translateY(0); }
+    }
+}
+
+// ─── Compartir ────────────────────────────────────────────────────────────────
+.octopus-share {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 1.25rem;
+
+    &__label {
+        font-family: $font-title;
+        font-size: 0.95rem;
+        color: rgba($octopus-sand, 0.55);
+        letter-spacing: 0.05em;
+        text-transform: uppercase;
+    }
+
+    &__buttons {
+        display: flex;
+        align-items: center;
+        gap: 0.75rem;
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+
+    &__btn {
+        display: inline-flex;
+        align-items: center;
+        gap: 0.5rem;
+        padding: 0.5rem 1.1rem;
+        border: 1px solid rgba($octopus-sand, 0.2);
+        border-radius: 2px;
+        color: rgba($octopus-sand, 0.65);
+        font-family: $font-main;
+        font-size: 0.85rem;
+        text-decoration: none;
+        transition: border-color 0.2s ease, color 0.2s ease, background 0.2s ease;
+
+        svg { flex-shrink: 0; }
+
+        &:hover {
+            border-color: $octopus-turquoise;
+            color: $octopus-turquoise;
+            background: rgba($octopus-turquoise, 0.07);
+            text-decoration: none;
+        }
     }
 }
 
@@ -253,5 +339,11 @@
     .octopus-content {
         padding: 2.5rem 1.25rem 4rem;
         gap: 3rem;
+    }
+
+    .octopus-cta__btn {
+        width: 100%;
+        justify-content: center;
+        padding: 1rem 1.5rem;
     }
 }
