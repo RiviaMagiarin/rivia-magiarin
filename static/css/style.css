@@ -1262,7 +1262,7 @@ nav .nav-lang a.active {
 .octopus-disclaimer p {
   font-size: 0.9rem;
   line-height: 1.85;
-  color: rgba(242, 232, 213, 0.5);
+  color: rgba(242, 232, 213, 0.6);
   max-width: 72ch;
   font-style: italic;
 }
